@@ -1,25 +1,27 @@
-// const { api } = require("../util/axios");
 const axios = require('axios');
 
-exports.getCharacterOCID = async (req, res, next) => {
-  const {characterName} = req.query;
-  // console.log(characterName);
+exports.getCharacterStat = async (req, res, next) => {
+  const {ocid, date} = req.query;
+  console.log('d', ocid, date);
   try{
-    const {data} = await axios.get(`${process.env.NODE_APP_MAPLE_BASE_URL}/id`,
+    const {data} = await axios.get(`${process.env.NODE_APP_MAPLE_BASE_URL}/character/basic`,
      {
-      params: {character_name: characterName},
+      params: {ocid, date},
       headers:{
         'Content-Type': 'application/json',
         "x-nxopen-api-key": process.env.NODE_APP_MAPLE_API_KEY,
         "accept": "application/json"
       }
     })
+    // console.log(data)
     const result = {
       statusCode: 200,
       result: data
     }
     res.status(200).json(result);
-  }catch(e){console.log('error')}
+  }catch(e){
+    console.log(e)
+  }
 
   
 }

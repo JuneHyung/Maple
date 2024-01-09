@@ -18,7 +18,6 @@ const App = () => {
     const response = await getData<OCIDResponse>(`${baseUrl}/user/ocid`, {params: {characterName}})
     const {ocid} = response.result;
     console.log(ocid)
-
     setOcid(ocid)
   }
   return (
@@ -29,7 +28,7 @@ const App = () => {
       </div>
 
       {
-        ocid.length===0 ? <NoData /> : <TabContent />
+        ocid.length===0 ? <NoData /> : <TabContent ocid={ocid} />
       }
       
       <div>{characterName}</div>
