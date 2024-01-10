@@ -20,7 +20,7 @@ const AbilityInfoList = ({ocid}: any) => {
     },[getAbilityInfo, ocid])
   return (
     <ul className="ability-info-list">
-      <h1>어빌리티</h1>
+      <h1 className="info-title">어빌리티</h1>
       <ul className="ability-info-content">
       {
         abilityInfo.map((ability)=>

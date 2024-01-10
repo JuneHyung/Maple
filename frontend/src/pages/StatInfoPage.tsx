@@ -5,9 +5,11 @@ import StatInfoList from "../components/stat/StatInfoList";
 const StatInfoPage = ({ocid}: any) => {
   return (
     <div className="stat-info-page">
-      <StatInfoList ocid={ocid}/>
+      <div>
+        <StatInfoList ocid={ocid}/>
+        <AbilityInfoList ocid={ocid}/>
+      </div>
       <HyperStatInfoList ocid={ocid}/>
-      <AbilityInfoList ocid={ocid}/>
     </div>
   )
 }

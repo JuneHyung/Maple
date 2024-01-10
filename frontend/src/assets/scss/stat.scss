@@ -1,12 +1,54 @@
-.stat-info-page{
-  display:flex;
+$text-low-color: #9197b1;
+$text-middle-color: #848999;
+$pinkbean-point-color: #da7f99;
+.stat-info-page {
+  display: flex;
+  padding: 8px 0;
+
+  .stat-info-list {
+    width: 300px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 8px;
+    &:first-child{ margin-left: 0;    }
+    &:last-child{ margin-right: 0;    }
+    .stat-info-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0;
+      position:relative;
+      cursor:pointer;
+      .stat-name {
+        color: $text-low-color;
+      }
+      .stat-value {
+        color: $text-middle-color;
+      }
+      &:hover{
+        background-color:rgba(188,188,255,0.2);
+      }
+      &:hover .stat-description{
+        color:$pinkbean-point-color;
+        display:block;
+      }
+      .stat-description{
+        position:absolute;
+        display:none;
+        right:0;
+        padding: 0.5rem;
+        background-color:rgba(188,188,255,0.2);
+        font-weight:500;
+        color:#fff;
+      }
+    }
+  }
 }
 
-.basic-info-list{
+.basic-info-list {
   margin: 10px 0;
   padding: 8px;
-  background-color: rgba(255,255,255,0.2);
-
+  background-color: rgba(255, 255, 255, 0.2);
   .basic-info-content {
     padding: 8px 0;
     display: flex;
@@ -16,7 +58,6 @@
       align-items: center;
       margin-bottom: 0.25rem;
       .character-icon {
-        border-radius:5px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +68,7 @@
         display: flex;
         flex-direction: column;
         .character-info-item {
-          margin: 0.2rem;
+          margin: 2px;
           &:first-child {
             margin-top: 0;
           }
