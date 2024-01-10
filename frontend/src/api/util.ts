@@ -3,7 +3,7 @@ export const divideNumberComma = (num: number) => {
   return null;
 }
 
-type Grade = '레전드리' | '에픽' | '유니크' | '레어';
+export type Grade = '레전드리' | '에픽' | '유니크' | '레어';
 
 export const divideGrade = (grade: Grade)=>{
   switch(grade){
@@ -16,7 +16,7 @@ export const divideGrade = (grade: Grade)=>{
 }
 
 
-type CharacterType = '전사' | '궁수' | '마법사' | '도적' | '해적'
+export type CharacterType = '전사' | '궁수' | '마법사' | '도적' | '해적'
 export const divideCharacterType = (val: CharacterType) => {
   switch(val){
     case '전사' : return 'warrior-block';

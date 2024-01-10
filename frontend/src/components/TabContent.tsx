@@ -1,6 +1,9 @@
 import { useState } from "react"
-import StatInfo from "./StatInfo";
-import HyperStatInfo from "./HyperStatInfo";
+import StatInfo from "./stat/StatInfo";
+import HyperStatInfo from "./stat/HyperStatInfo";
+import AbilityInfo from "./stat/AbilityInfo";
+import EquipmentInfoArea from "./equipment/EquipmentInfoArea";
+import UnionInfoArea from "./union/UnionInfoArea";
 type TabStatus = 'stat' | 'equipment' | 'union'
 const TabContent = ({ocid}: any) => {
   const [curStatus, setCurStatus] = useState<TabStatus>('stat');
@@ -12,7 +15,13 @@ const TabContent = ({ocid}: any) => {
   const Content = () => {
     switch(curStatus){
       case 'stat':
-        return <StatInfo ocid={ocid}/>
+        return <>
+        <UnionInfoArea ocid={ocid} />
+        {/* <EquipmentInfoArea ocid={ocid}/> */}
+          {/* <StatInfo ocid={ocid}/>
+          <HyperStatInfo ocid={ocid}/>
+          <AbilityInfo ocid={ocid} /> */}
+        </>
       case 'equipment':
         return <HyperStatInfo ocid={ocid} />
       default:
