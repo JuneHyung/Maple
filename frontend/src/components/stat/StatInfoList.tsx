@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { FinalStat, getCharacterBasic, getCharacterStat } from "../../api/stat";
-import { divideNumberComma } from "../../api/util";
+import { FinalStat, getCharacterStat } from "../../api/stat";
 
 interface StatInfoProps {
   ocid: string;

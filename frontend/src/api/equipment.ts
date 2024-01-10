@@ -126,3 +126,171 @@ export const getCharacterEquipment = async (ocid: string) => {
   console.log(response.result);
   return response.result;
 };
+
+
+export interface CashEquipmentInfo{
+  "date": string,
+  "character_gender": string,
+  "character_class": string,
+  "preset_no": number,
+  "cash_item_equipment_preset_1": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ],
+  "cash_item_equipment_preset_2": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ],
+  "cash_item_equipment_preset_3": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ],
+  "additional_cash_item_equipment_preset_1": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ],
+  "additional_cash_item_equipment_preset_2": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ],
+  "additional_cash_item_equipment_preset_3": [
+    {
+      "cash_item_equipment_part": string,
+      "cash_item_equipment_slot": string,
+      "cash_item_name": string,
+      "cash_item_icon": string,
+      "cash_item_description": string,
+      "cash_item_option": [
+        {
+          "option_type": string,
+          "option_value": string
+        }
+      ],
+      "date_expire": string,
+      "date_option_expire": string,
+      "cash_item_label": string,
+      "cash_item_coloring_prism": {
+        "color_range": string,
+        "hue": number,
+        "saturation": number,
+        "value": number
+      },
+      "base_preset_item_disable_flag": string
+    }
+  ]
+}
+
+
+// 장착 캐시 장비 정보 조회
+export const getCharacterCashEquipment = async (ocid: string) => {
+  const response = await getData<CashEquipmentInfo>(`${baseUrl}/equipment/cash/wear`, {
+    params: { ocid, date: baseDay },
+  });
+  console.log(response.result);
+  return response.result;
+};

@@ -1,6 +1,8 @@
+import LinkSkillInfoList from "../components/skill/LinkSkillInfoList";
 import AbilityInfoList from "../components/stat/AbilityInfoList";
 import HyperStatInfoList from "../components/stat/HyperStatInfoList";
 import StatInfoList from "../components/stat/StatInfoList";
+import SymbolInfoList from "../components/stat/SymbolInfoList";
 
 const StatInfoPage = ({ocid}: any) => {
   return (
@@ -10,6 +12,8 @@ const StatInfoPage = ({ocid}: any) => {
         <AbilityInfoList ocid={ocid}/>
       </div>
       <HyperStatInfoList ocid={ocid}/>
+      <SymbolInfoList ocid={ocid} />
+      <LinkSkillInfoList ocid={ocid}/>
     </div>
   )
 }

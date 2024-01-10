@@ -1,43 +1,50 @@
-.equipment-info-list {
-  // display: flex;
-  overflow: auto;
-  // flex: 2;
-  .equipment-info-item {
+.equipment-info-page{
+  display:flex;
+  padding: 8px 0;
+
+  .equipment-info-list {
     display: flex;
-    margin: 8px 0;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 8px;
-    transition:all 0.4s;
-    cursor: pointer;
-    &:hover{ background-color:rgba(255, 255, 255, 0.2);}
-    &:first-child {
-      margin-top: 0;
-    }
-    .equipment-img-wrap {
+    flex-direction: column;
+    overflow: auto;
+    margin: 0 8px;
+    .equipment-info-item {
       display: flex;
+      margin: 4px 0;
+      justify-content: space-between;
       align-items: center;
-      .equipment-icon {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;;
+      padding: 8px;
+      transition:all 0.4s;
+      cursor: pointer;
+      &:hover{ background-color:rgba(255, 255, 255, 0.2);}
+      &:first-child {
+        margin-top: 0;
+      }
+      .equipment-img-wrap {
         display: flex;
-        justify-content: center;
-        min-width: 38px;
-        img {
-          display: block;
+        align-items: center;
+        .equipment-icon {
+          display: flex;
+          justify-content: center;
+          min-width: 38px;
+          img {
+            display: block;
+          }
+        }
+        .equipment-description {
+          display: flex;
+          flex-direction: column;
+          margin-left: 8px;
+          p {
+            margin: 4px;
+          }
         }
       }
-      .equipment-description {
-        display: flex;
-        flex-direction: column;
+      .item-potential-option-list {
         margin-left: 8px;
-        p {
-          margin: 4px;
-        }
       }
-    }
-    .item-potential-option-list {
-      margin-left: 8px;
     }
   }
+  
 }

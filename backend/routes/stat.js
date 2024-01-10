@@ -6,4 +6,5 @@ router.get('/basic', statController.getCharacterBasic)
 router.get('/total', statController.getCharacterStat)
 router.get('/hyper', statController.getCharacterHyperStat)
 router.get('/ability', statController.getCharacterAbility)
+router.get('/symbol', statController.getCharacterSymbol)
 module.exports = router;

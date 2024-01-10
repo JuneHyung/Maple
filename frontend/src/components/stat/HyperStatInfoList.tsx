@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { HyperStat, HyperStatPreset, getCharacterHyperStat } from "../../api/stat";
+import { HyperStat, getCharacterHyperStat } from "../../api/stat";
 
 const initialState = {
   hyper_stat_preset_1: [

@@ -52,7 +52,7 @@ const UnionInfoPage = ({ ocid }: any) => {
             <UnionTable info={unionRaiderInfo} />
           </div>
           <div className="union-info-list">
-            <h1 className="union-info-name">유니온 공격대 점령 효과</h1>
+            <h1 className="union-info-name info-title">유니온 공격대 점령 효과</h1>
             <ul className="union-info-content">
               {unionRaiderInfo.hasOwnProperty("union_occupied_stat") ? (
                 unionRaiderInfo.union_occupied_stat
@@ -72,7 +72,7 @@ const UnionInfoPage = ({ ocid }: any) => {
       </div>
 
       <div className="union-info-list">
-        <h1 className="union-info-name">유니온 Member</h1>
+        <h1 className="union-info-name info-title">유니온 Member</h1>
         <ul className="union-info-content">
           {unionRaiderInfo.hasOwnProperty("union_block") && unionRaiderInfo.union_block.length > 0 ? (
             unionRaiderInfo.union_block
@@ -91,7 +91,7 @@ const UnionInfoPage = ({ ocid }: any) => {
       </div>
 
       <div className="union-info-list">
-        <h1 className="union-info-name">유니온 공격대원 효과</h1>
+        <h1 className="union-info-name info-title">유니온 공격대원 효과</h1>
         <ul className="union-info-content">
           {unionRaiderInfo.hasOwnProperty("union_raider_stat") ? (
             unionRaiderInfo.union_raider_stat
