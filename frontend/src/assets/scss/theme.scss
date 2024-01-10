@@ -8,13 +8,39 @@ $star-force-bg-color: rgba(255, 248, 232, 0.3);
 $text-low-color: #9197b1;
 $text-middle-color: #848999;
 
-$warrior-color: rgb(198, 42, 91);
-$archer-color: rgb(143, 175, 68);
-$wizard-color: rgb(46, 151, 173);
-$thief-color: rgb(154, 101, 170);
-$pirate-color: rgb(187, 186, 187);
-$hybrid-color: linear-gradient(rgb(187, 186, 187) 0%,rgb(154, 101, 170) 100%); 
+$warrior-color: #c62a5b;
+$archer-color: #8faf44;
+$wizard-color: #2e97ad;
+$thief-color: #9a65aa;
+$pirate-color: #bbbabb;
+$hybrid-color: linear-gradient(#bbbabb 0%,#9a65aa 100%); 
 
 $union-table-border-color: rgba(255, 248, 232, 0.1);
-$union-table-bg-color: linear-gradient(rgb(76, 79, 93) 0%, rgb(39, 40, 46) 100%);
-$union-table-active-color: rgb(210, 183, 153);
+$union-table-bg-color: linear-gradient(#4c4f5d 0%, #27282e 100%);
+$union-table-active-color: #d2b799;
+
+$pinkbean-point-color: #da7f99;
+$pinkbean-low-color: #fbc4c7;
+$pinkbean-bg-color: #f7f2f3;
+
+.rank-legend{color:$legend-color;}
+.rank-unique{color:$unique-color;}
+.rank-epic{color:$epic-color;}
+.rank-rare{color:$rare-color;}
+
+* {
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+    border-radius: 1.25rem;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 1.25rem;
+    width: 0.4rem;
+    background-color: $star-force-bg-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1.25rem;
+    width: 0.4rem;
+    background-color: $pinkbean-point-color;
+  }
+}
