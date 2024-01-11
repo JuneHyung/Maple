@@ -18,34 +18,36 @@ const LinkSkillInfoList = ({ ocid }: any) => {
     getLinkSkillInfo(ocid);
   }, [getLinkSkillInfo, ocid]);
   return (
-    <ul className="stat-info-list">
+    <ul className="link-info-list">
       <h1 className="info-title">링크스킬</h1>
-      <li>
-        <div className="">
-          <div className="">
+      {linkSkillInfo.character_owned_link_skill && (
+        <li className="link-info-item">
+          <div className="link-icon">
             <img src={linkSkillInfo.character_owned_link_skill.skill_icon} alt={`${linkSkillInfo.character_owned_link_skill.skill_name} icon`} />
           </div>
-          <div className="equipment-description">
-            <p className="">{linkSkillInfo.character_owned_link_skill.skill_name}</p>
-            <p className="">{linkSkillInfo.character_owned_link_skill.skill_level} </p>
-            <p className="">{linkSkillInfo.character_owned_link_skill.skill_effect} </p>
-          </div>
-        </div>
-      </li>
-      {linkSkillInfo.character_link_skill.map((skill) => (
-        <li key={skill.skill_name} className="">
-          <div className="">
-            <div className="">
-              <img src={skill.skill_icon} alt={`${skill.skill_name} icon`} />
-            </div>
-            <div className="equipment-description">
-              <p className="">{skill.skill_name}</p>
-              <p className="">{skill.skill_level} </p>
-              <p className="">{skill.skill_effect} </p>
-            </div>
+          <div className="link-description">
+            <p className="link-skill-name">
+              {linkSkillInfo.character_owned_link_skill.skill_name} <span>Lv.{linkSkillInfo.character_owned_link_skill.skill_level}</span>
+            </p>
+            <p className="link-skill-effect">{linkSkillInfo.character_owned_link_skill.skill_effect} </p>
           </div>
         </li>
-      ))}
+      )}
+      {linkSkillInfo.character_link_skill &&
+        linkSkillInfo.character_link_skill.map((skill) => (
+          <li key={skill.skill_name} className="link-info-item">
+            <div className="link-icon">
+              <img src={skill.skill_icon} alt={`${skill.skill_name} icon`} />
+            </div>
+            <div className="link-description">
+              <p className="link-skill-name">
+                {skill.skill_name}
+                <span>Lv.{skill.skill_level}</span>
+              </p>
+              <p className="link-skill-effect">{skill.skill_effect} </p>
+            </div>
+          </li>
+        ))}
     </ul>
   );
 };

@@ -1,0 +1,31 @@
+$text-low-color: #9197b1;
+$text-middle-color: #848999;
+
+$pinkbean-point-color: #da7f99;
+$pinkbean-low-color: #fbc4c7;
+$pinkbean-high-color: #943376;
+$pinkbean-bg-color: #f7f2f3;
+
+.link-info-list {
+  width: 300px;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 8px;
+  
+  .link-info-item {
+    display: flex;
+    align-items: center;
+    margin: 4px 0;
+    padding: 8px;
+    border-radius:4px;
+    background-color:rgba(255,255,255,0.2);
+    cursor: pointer;
+    .link-icon{
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin-right:8px;
+    }
+  }
+}

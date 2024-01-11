@@ -17,15 +17,19 @@ const UnionTable =({info}: any) => {
         else if(a.x < b.x) return -1;
         else return a.y - b.y;
       })
-      // console.log(sorted)
+      console.log(sorted)
       setPosInfo(sorted);
     }
   }, [info])
   
+  // -11, 1 => 0, 9
+  //  2 8
+  // 3 7
+
   const isActive = (cx:number, cy:number) => {
     for(const {x, y, block_class} of posInfo){
-      if(x===cy-11 && y===cx-9){ 
-        if(block_class==='제논'){console.log(x, y, block_class, cx, cy)}
+      // console.log(x, cy, y, cx, block_class)
+      if(x===(cy-11) && y+cx===10){ 
         switch(block_class){
           case '히어로':case '팔라딘':case '다크나이트':case '소울마스터':case '미하일':case '블래스터':case '데몬슬레이어':case '데몬어벤져':case '아란':case '카이저':case '아델':case '제로':
             return 'active-cell active-warrior-cell';
@@ -37,10 +41,9 @@ const UnionTable =({info}: any) => {
             return 'active-cell active-thief-cell';
           case '바이퍼':case '캡틴':case '캐논마스터':case '스트라이커':case '메카닉':case '은월':case '엔젤릭버스터':case '아크':
             return 'active-cell active-pirate-cell';
-            case '제논':
-              return 'active-cell active-hybrid-cell';
-              default: 
-              console.log(block_class)
+          case '제논':
+            return 'active-cell active-hybrid-cell';
+          default: 
             return 'active-cell';
         }
       }
@@ -52,11 +55,11 @@ const UnionTable =({info}: any) => {
       {
         arr.map((row, rIdx)=>
           <div className="row" key={rIdx}>
-          {row.map((cell, cIdx) => 
-            <div className={`cell ${isActive(rIdx, cIdx)}`} key={cIdx}></div>
+            {row.map((cell, cIdx) => 
+              <div className={`cell ${isActive(rIdx, cIdx)}`} key={cIdx}></div>
             )}
           </div> 
-          )
+        )
       }
     </div>
   ) 

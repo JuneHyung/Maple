@@ -19,21 +19,20 @@ const SymbolInfoList = ({ocid}: any) =>{
     getSymbolInfo(ocid);
   }, [getSymbolInfo, ocid]);
   return (
-    <ul className="stat-info-list">
+    <ul className="symbol-info-list">
       <h1 className="info-title">심볼</h1>
       {symbolInfo.symbol && symbolInfo.symbol.map((symbol) => (
-        <li key={symbol.symbol_name} className="equipment-info-item">
-        <div className="equipment-img-wrap">
-          <div className="equipment-icon">
+        <li key={symbol.symbol_name} className="symbol-info-item">
+        
+          <div className="symbol-icon">
             <img src={symbol.symbol_icon} alt={`${symbol.symbol_name} icon`} />
           </div>
-          <div className="equipment-description">
-            <p className="">{symbol.symbol_name}</p>
-            <p className="">{symbol.symbol_level} </p>
-            <p className="">{symbol.symbol_level===20 && 'MAX' } </p>
-            <p className="item-name">{symbol.symbol_name.includes('어센틱') ? 'AUT' : 'ARC'} {symbol.symbol_force}</p>
+          <div className="symbol-description">
+            <p className="symbol-name">{symbol.symbol_name}</p>
+            <p className="symbol-level">Lv. {symbol.symbol_level} <span className="symbol-level-status">{symbol.symbol_level===20 && 'MAX' } </span></p>
+            <p className="symbol-force">{symbol.symbol_name.includes('어센틱') ? 'AUT' : 'ARC'} {symbol.symbol_force}</p>
           </div>
-        </div>
+        
       </li>
       ))}
     </ul>
