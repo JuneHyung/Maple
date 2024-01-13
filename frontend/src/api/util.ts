@@ -40,9 +40,38 @@ export const divideCharacterType = (val: CharacterType) => {
 
 // ADDITIONAL STAT : 레벨당 증가량 동일. 
 // 크뎀 : +0.35% 보공,방무 : +1.00%  데미지 : +0.75%  공격력 : +5 주스텟 : +100
-export const calcHexaPlusScore = (level: number, name: string) => {
-
-  const s = ['공격력 증가', '크리티컬 데미지 증가', '주력 스탯 증가', '데미지 증가', '보스 데미지 증가', '방어율 무시']
-
-  return '';
+export interface PlusScore {
+  '크리티컬 데미지 증가': number[],
+  '보스 데미지 증가':  number[],
+  '방어율 무시':  number[],
+  '데미지 증가':  number[],
+  '공격력 증가':  number[],
+  '주력 스탯 증가':  number[]
+}
+const mainPlusScore: PlusScore = {
+  '크리티컬 데미지 증가': [0, 0.35, 0.35, 0.35, 0.35, 0.70, 0.70, 0.70, 1.05, 1.05, 1.40], 
+  '보스 데미지 증가':[0, 1.00, 1.00, 1.00, 1.00, 2.00, 2.00, 2.00, 3.00, 3.00, 4.00], 
+  '방어율 무시':[0, 1.00, 1.00, 1.00, 1.00, 2.00, 2.00, 2.00, 3.00, 3.00, 4.00], 
+  '데미지 증가':[0, 0.75, 0.75, 0.75, 0.75, 1.50, 1.50, 1.50, 2.25, 2.25, 3.00], 
+  '공격력 증가':[0, 5, 5, 5, 5, 10, 10, 10, 15, 15, 20],
+  '주력 스탯 증가':[0, 100, 100, 100, 100, 200, 200, 200, 300, 300, 400]
+}
+const additionalPlusScore: PlusScore = {
+  '크리티컬 데미지 증가': [0, 0.35, 0.35, 0.35, 0.35, 0.35, 0.35, 0.35, 0.35, 0.35, 0.35],
+  '보스 데미지 증가': [0, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00], 
+  '방어율 무시': [0, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00, 1.00], 
+  '데미지 증가': [0, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75, 0.75], 
+  '공격력 증가': [0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+  '주력 스탯 증가': [0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+}
+export const calcHexaPlusScore = (level: number, name: keyof PlusScore, status: 'main' | 'additional') => {
+  if(status==='main'){
+    const arr = mainPlusScore[name].slice(0, level+1);
+    const sum = (arr.reduce((a,c)=>a+c, 0)).toLocaleString()
+    return sum;
+  }else{
+    const arr = additionalPlusScore[name].slice(0, level+1);
+    const sum = (arr.reduce((a,c)=>a+c, 0)).toLocaleString()
+    return sum;
+  }
 }

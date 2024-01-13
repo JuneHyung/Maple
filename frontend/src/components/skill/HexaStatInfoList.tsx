@@ -32,31 +32,35 @@ const HexaStatInfoList = ({ ocid }: any) => {
                 <p className="hexa-stat-level">Lv.{stat.main_stat_level} </p>
                 <p className="hexa-stat-info">
                   <span>{stat.main_stat_name} </span>
-                  <span>+0</span>
+                  <span>{`+${calcHexaPlusScore(stat.main_stat_level, stat.main_stat_name, 'main')}`}{(stat.main_stat_name!=='공격력 증가' &&stat.main_stat_name!=='주력 스탯 증가') && '%'}</span>
                 </p>
               </li>
               <li className="hexa-stat-item">
                 <span className="hexa-stat-level">
-                  Lv.{stat.sub_stat_level_1}{" "}
+                  Lv.{stat.sub_stat_level_1}
                 </span>
                 <span>{stat.sub_stat_name_1} </span>
                 <span>
+                  +
                   {calcHexaPlusScore(
                     stat.sub_stat_level_1,
-                    stat.sub_stat_name_1
-                  )}{" "}
+                    stat.sub_stat_name_1,
+                    'additional'
+                  )}{(stat.sub_stat_name_1!=='공격력 증가' &&stat.sub_stat_name_1!=='주력 스탯 증가') && '%'}
                 </span>
               </li>
               <li className="hexa-stat-item">
                 <span className="hexa-stat-level">
-                  Lv.{stat.sub_stat_level_2}{" "}
+                  Lv.{stat.sub_stat_level_2}
                 </span>
                 <span>{stat.sub_stat_name_2} </span>
                 <span>
+                  +
                   {calcHexaPlusScore(
                     stat.sub_stat_level_2,
-                    stat.sub_stat_name_2
-                  )}{" "}
+                    stat.sub_stat_name_2,
+                    'additional',
+                  )}{(stat.sub_stat_name_2!=='공격력 증가' &&stat.sub_stat_name_2!=='주력 스탯 증가') && '%'}
                 </span>
               </li>
             </>

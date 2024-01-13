@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { getData } from ".";
+import { PlusScore } from "./util";
 const baseDay = dayjs().subtract(1, "day").format("YYYY-MM-DD");
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -61,9 +62,9 @@ export const getCharacterSkills = async (ocid: string, grade: string | number) =
 
 interface CharacterHexaStatCore{
   "slot_id": string
-  "main_stat_name": string,
-  "sub_stat_name_1":string,
-  "sub_stat_name_2":string,
+  "main_stat_name": keyof PlusScore,
+  "sub_stat_name_1": keyof PlusScore,
+  "sub_stat_name_2": keyof PlusScore,
   "main_stat_level": number,
   "sub_stat_level_1": number,
   "sub_stat_level_2": number,
