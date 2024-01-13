@@ -1,0 +1,57 @@
+$warrior-color: #c62a5b;
+$archer-color: #8faf44;
+$wizard-color: #2e97ad;
+$thief-color: #9a65aa;
+$pirate-color: #bbbabb;
+$maple-point-color: #f68500;
+$highlight-color: #ff5e78;
+.rank-info-page{
+  .rank-class-list{
+    .rank-class-row{
+      display:flex;
+      flex-wrap:wrap;
+      &:nth-child(2n){
+        justify-content: flex-end;
+      }
+      .rank-class-item{
+        padding:8px;
+        margin: 4px;
+        border-radius:5px;
+        display:flex;
+        flex:1;
+        align-items: center;
+        justify-content: center;
+        font-size:0.8rem;
+        transition: all 0.2s;
+        cursor:pointer;
+        &:hover{
+          opacity:0.5;
+        }
+        &:first-child{
+          margin-left:0;
+        }
+      }
+      .selected-item{outline:4px solid $highlight-color;}
+      .warrior-block { background-color: $warrior-color; }
+      .archer-block { background-color: $archer-color; }
+      .wizard-block { background-color: $wizard-color; }
+      .thief-block { background-color: $thief-color; }
+      .pirate-block { background-color: $pirate-color; }
+      .other-block { background-color: $maple-point-color; }
+    }
+  }
+  .rank-info-list{
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:20px;
+    .rank-info-item{
+      display:flex;
+      flex-direction: column;
+      width:20%;
+      box-sizing: border-box;
+      padding: 1rem;
+      // margin: 4px;
+      // border:1px solid #fff;
+    }
+  }
+}

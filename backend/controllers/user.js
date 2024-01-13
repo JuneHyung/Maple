@@ -24,6 +24,30 @@ exports.getCharacterOCID = async (req, res, next) => {
     console.log('error')
     console.log(e)
   }
+}
 
+exports.getCharacterRankOverall = async (req, res, next) => {
+  const {classKey, date} = req.query;
   
+  try{
+    const {data} = await axios.get(`${process.env.NODE_APP_MAPLE_BASE_URL}/ranking/overall`,
+     {
+      params: {class: classKey, date, page: 1},
+      headers:{
+        'Content-Type': 'application/json',
+        "x-nxopen-api-key": process.env.NODE_APP_MAPLE_API_KEY,
+        "accept": "application/json"
+      }
+    })
+    
+    const result = {
+      statusCode: 200,
+      result: data.ranking.slice(0, 50)
+    }
+    res.status(200).json(result);
+  }catch(e){
+    res.json(e);
+    console.log('error')
+    console.log(e)
+  }
 }
