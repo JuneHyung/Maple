@@ -27,7 +27,7 @@ const TabContent = ({ ocid, handleOCID, setCharacterName }: any) => {
 
   const nav = useNavigate();
   useEffect(()=>{
-    nav('stat')
+    if(ocid.length!==0) nav('stat')
   },[])
 
   return (
