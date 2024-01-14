@@ -19,9 +19,11 @@ const App = () => {
   }
 
   const handleOnClick = async (character_name: string) => {
-    const response = await getData<OCIDResponse>(`${baseUrl}/user/ocid`, {params: {characterName: character_name}})
-    const {ocid} = response.result;
-    setOcid(ocid);
+    if(character_name){
+      const response = await getData<OCIDResponse>(`${baseUrl}/user/ocid`, {params: {characterName: character_name}})
+      const {ocid} = response.result;
+      setOcid(ocid);
+    }
   }
 
   const resetStatus = useCallback(()=>{
