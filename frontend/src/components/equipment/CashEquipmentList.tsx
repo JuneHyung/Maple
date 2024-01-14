@@ -8,7 +8,6 @@ const CashEquipmentInfoList = ({ ocid }: any) => {
   const getCashItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterCashEquipment(targetOcid);
-      console.log(info)
       setCashEquipmentInfo(info);
     } catch (e) {
       setCashEquipmentInfo({} as CashEquipmentInfo);
@@ -21,7 +20,6 @@ const CashEquipmentInfoList = ({ ocid }: any) => {
   }, [getCashItemEquipmentInfo, ocid]);
 
   const SwitchPreset = (preset_no: number) => {
-    console.log(preset_no)
     switch(preset_no){
       case 1:
         return (

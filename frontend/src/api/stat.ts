@@ -51,7 +51,6 @@ export const getCharacterAbility = async (ocid: string) => {
   const response = await getData<Ability>(`${baseUrl}/stat/ability`, {
     params: { ocid, date: baseDay },
   });
-  console.log(response);
   return response.result.ability_info;
 };
 

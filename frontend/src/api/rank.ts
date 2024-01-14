@@ -3,7 +3,7 @@ import { getData } from ".";
 const baseDay = dayjs().subtract(1, "day").format("YYYY-MM-DD");
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
-interface Ranking{
+export interface Ranking{
   "date": string,
   "ranking": number,
   "character_name": string,

@@ -56,7 +56,6 @@ export const getCharacterSkills = async (ocid: string, grade: string | number) =
       character_skill_grade: grade
     }
   })
-  console.log(response)
   return response.result;
 }
 
@@ -83,6 +82,5 @@ export const getCharacterHexaStat = async (ocid: string) => {
       date: baseDay,
     }
   })
-  console.log(response)
   return response.result;
 }

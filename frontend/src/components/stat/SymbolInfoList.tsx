@@ -7,7 +7,6 @@ const SymbolInfoList = ({ocid}: any) =>{
   const getSymbolInfo = useCallback(async (ocid: string) => {
     try {
       const result = await getCharacterSymbol(ocid);
-      console.log(result)
       setSymbolInfo(result);
     } catch (e) {
       setSymbolInfo({} as SymbolInfo);

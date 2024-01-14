@@ -17,15 +17,10 @@ const UnionTable =({info}: any) => {
         else if(a.x < b.x) return -1;
         else return a.y - b.y;
       })
-      console.log(sorted)
       setPosInfo(sorted);
     }
   }, [info])
   
-  // -11, 1 => 0, 9
-  //  2 8
-  // 3 7
-
   const isActive = (cx:number, cy:number) => {
     for(const {x, y, block_class} of posInfo){
       // console.log(x, cy, y, cx, block_class)

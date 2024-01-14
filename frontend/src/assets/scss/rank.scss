@@ -10,6 +10,7 @@ $highlight-color: #ff5e78;
     .rank-class-row{
       display:flex;
       flex-wrap:wrap;
+      justify-content: space-between;
       &:nth-child(2n){
         justify-content: flex-end;
       }
@@ -30,6 +31,9 @@ $highlight-color: #ff5e78;
         &:first-child{
           margin-left:0;
         }
+        &:last-child{
+          margin-right:0;
+        }
       }
       .selected-item{outline:4px solid $highlight-color;}
       .warrior-block { background-color: $warrior-color; }
@@ -44,14 +48,33 @@ $highlight-color: #ff5e78;
     display:flex;
     flex-wrap:wrap;
     margin-top:20px;
+    justify-content: space-between;
     .rank-info-item{
       display:flex;
       flex-direction: column;
-      width:20%;
+      width:19.5%;
       box-sizing: border-box;
-      padding: 1rem;
-      // margin: 4px;
-      // border:1px solid #fff;
+      padding: 0.5rem;
+      margin: 4px 0;
+      border-radius:5px;
+      border: 2px solid #da7f99;
+      cursor:pointer;
+      &:hover{
+        background-color: #ad6faa;
+      }
+      .rank-info-row{
+        margin:4px;
+        &:first-child{
+          margin-top:0;
+        }
+        .rank-number{font-size:1.12rem;}
+        .character-world-name{
+          border-radius: 4px;
+          background-color:#777;
+          padding:2px 4px;
+          margin-right: 8px;}
+        .character-level{margin-right: 8px;}
+      }
     }
   }
 }

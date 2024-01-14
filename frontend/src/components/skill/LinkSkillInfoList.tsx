@@ -7,7 +7,6 @@ const LinkSkillInfoList = ({ ocid }: any) => {
   const getLinkSkillInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterLinkSkill(targetOcid);
-      console.log(info);
       setLinkSkillInfo(info);
     } catch (e) {
       setLinkSkillInfo({} as LinkSkillInfo);

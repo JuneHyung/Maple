@@ -10,7 +10,6 @@ const HexaStatInfoList = ({ ocid }: any) => {
   const getHexaStat = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterHexaStat(targetOcid);
-      console.log(info);
       setHexaSkillInfoList(info);
     } catch (e) {
       setHexaSkillInfoList({} as HexaStatInfo);

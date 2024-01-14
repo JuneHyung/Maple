@@ -7,7 +7,7 @@ interface ClassInfo {
   type: CharacterType;
   label: string;
 }
-const RankInfoPage = () => {
+const RankInfoPage = ({handleOCID, setCharacterName}: any) => {
   const [selectedClass, setSelectedClass] = useState<ClassInfo>({} as ClassInfo);
   const handleSelectedClass = useCallback((character: ClassInfo) => {
     if(selectedClass.key){
@@ -17,6 +17,7 @@ const RankInfoPage = () => {
       setSelectedClass(character)
     }
   }, [selectedClass.key])
+
   return (
     <div className="rank-info-page">
       <ul className="rank-class-list">
@@ -36,7 +37,7 @@ const RankInfoPage = () => {
           );
         })}
       </ul>
-      <RankInfoList selected={selectedClass}/>
+      <RankInfoList selected={selectedClass} handleOCID={handleOCID} setCharacterName={setCharacterName}/>
     </div>
   );
 };

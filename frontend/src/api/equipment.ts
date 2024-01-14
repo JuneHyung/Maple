@@ -123,7 +123,6 @@ export const getCharacterEquipment = async (ocid: string) => {
   const response = await getData<EquipmentInfo>(`${baseUrl}/equipment/wear`, {
     params: { ocid, date: baseDay },
   });
-  console.log(response.result);
   return response.result;
 };
 
@@ -291,6 +290,5 @@ export const getCharacterCashEquipment = async (ocid: string) => {
   const response = await getData<CashEquipmentInfo>(`${baseUrl}/equipment/cash/wear`, {
     params: { ocid, date: baseDay },
   });
-  console.log(response.result);
   return response.result;
 };

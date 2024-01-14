@@ -36,7 +36,6 @@ export const getCharacterUnion = async (ocid: string) => {
   const response = await getData<UnionInfo>(`${baseUrl}/union/basic`, {
     params: {ocid, date: baseDay}
   })
-  console.log(response.result)
   return response.result;
 }
 
@@ -46,6 +45,5 @@ export const getCharacterUnionRaider = async (ocid: string) => {
   const response = await getData<UnionRaiderInfo>(`${baseUrl}/union/raider`, {
     params: {ocid, date: baseDay}
   })
-  console.log(response.result)
   return response.result;
 }

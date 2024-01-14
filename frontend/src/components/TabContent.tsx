@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EquipmentInfoPage from "../pages/EquipmentInfoPage";
 import UnionInfoPage from "../pages/UnionInfoPage";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes, useNavigate } from "react-router-dom";
 import NoData from "./NoData";
 import StatInfoPage from "../pages/StatInfoPage";
 import BasicInfoList from "./stat/BasicInfoList";
@@ -12,8 +12,8 @@ interface PathInfo {
   path: string;
 }
 type TabStatus = PathInfo[];
-const TabContent = ({ ocid }: any) => {
-  const [curStatus, setCurStatus] = useState<PathInfo>({ label: "스탯", path: "stat" });
+const TabContent = ({ ocid, handleOCID, setCharacterName }: any) => {
+  const [curStatus, setCurStatus] = useState<PathInfo>({ label: "", path: "" });
 
   const statusList: TabStatus = [
     { label: "스탯", path: "stat" },
@@ -25,12 +25,16 @@ const TabContent = ({ ocid }: any) => {
     setCurStatus(status);
   };
 
+  const nav = useNavigate();
+  useEffect(()=>{
+    nav('stat')
+  },[])
+
   return (
     <div className="tab-content">
-      <BrowserRouter>
         {ocid.length === 0 ? (
           <Routes>
-            <Route path="/" element={<RankInfoPage />} />
+            <Route path="/" element={<RankInfoPage handleOCID={handleOCID}  setCharacterName={setCharacterName}/>} />
           </Routes>
         ) : (
           <>
@@ -54,7 +58,6 @@ const TabContent = ({ ocid }: any) => {
             </Routes>
           </>
         )}
-      </BrowserRouter>
     </div>
   );
 };

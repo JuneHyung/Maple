@@ -37,7 +37,6 @@ const HyperStatInfoList = ({ ocid }: any) => {
     try {
       const info = await getCharacterHyperStat(targetOcid);
       const { hyper_stat_preset_1, hyper_stat_preset_1_remain_point, hyper_stat_preset_2, hyper_stat_preset_2_remain_point, hyper_stat_preset_3, hyper_stat_preset_3_remain_point } = info;
-      // console.log(hyper_stat_preset_1)
       setHyperStatInfo({
         hyper_stat_preset_1,
         hyper_stat_preset_1_remain_point,
