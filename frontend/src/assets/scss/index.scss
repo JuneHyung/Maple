@@ -1,5 +1,8 @@
-@import "./app.scss";
 @import "./font.scss";
+@import "./app.scss";
+*{
+  font-family: 'MaplestoryOTFBold', 'Noto Sans KR', sans-serif;
+}
 body{
   background-color: #282c34;
   color:#fff;

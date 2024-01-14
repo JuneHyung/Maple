@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import LinkSkillInfoList from "../components/skill/LinkSkillInfoList";
 import AbilityInfoList from "../components/stat/AbilityInfoList";
 import HyperStatInfoList from "../components/stat/HyperStatInfoList";

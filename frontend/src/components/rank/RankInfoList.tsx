@@ -7,7 +7,7 @@ const RankInfoList = ({selected, handleOCID, setCharacterName}: any) => {
   const getRankingInfoList = useCallback(async() => {
     try {
       const info = await getRankOverall(selected.key);
-      setRankInfoList(info);
+      if(info) setRankInfoList(info);
     } catch (e) {
       setRankInfoList([] as RankInfo);
       alert(e);
@@ -29,7 +29,7 @@ const RankInfoList = ({selected, handleOCID, setCharacterName}: any) => {
 
   return (
     <ul className="rank-info-list">
-      {rankInfoList.map((info, idx) =>{
+      {rankInfoList.length!==0 && rankInfoList.map((info, idx) =>{
         return <li className="rank-info-item" key={info.character_name} onClick={()=>handleOnClick(info)}>
           <p className="rank-info-row">
           <span className="rank-number">{idx+1 < 10 ? `0${idx+1}` : idx+1}</span>
