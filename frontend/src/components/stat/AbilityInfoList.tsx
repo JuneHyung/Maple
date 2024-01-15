@@ -27,7 +27,10 @@ const AbilityInfoList = ({ocid}: any) => {
           <li 
           key={`${ability.ability_no}`}
           className={`ability-info-item ${ divideGrade(ability.ability_grade)}`}
-          >[ {ability.ability_grade} ] {ability.ability_value}</li>
+          >
+            <span>[ {ability.ability_grade} ] </span>
+            <span>{ability.ability_value}</span>
+          </li>
         )
       }
       </ul>

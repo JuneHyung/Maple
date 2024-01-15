@@ -64,7 +64,7 @@ const HyperStatInfoList = ({ ocid }: any) => {
 
   return (
     <div className="stat-info">
-      <ul className="stat-info-list">
+      <ul className="stat-info-list isOpen">
         <h1 className="info-title">하이퍼 스탯</h1>
         <p>남은 포인트 : {hyperStatInfo.hyper_stat_preset_1_remain_point}</p>
         {hyperStatInfo.hasOwnProperty("hyper_stat_preset_1_remain_point") ? (

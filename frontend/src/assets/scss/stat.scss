@@ -2,15 +2,14 @@
   display: flex;
   padding: 8px 0;
   .stat-info {
-    margin-bottom:20px;
+    margin: 0 8px 20px 8px;
+    &:first-child{margin-left:0;}
     .stat-info-list {
       width: 300px;
       height: 300px;
       overflow: hidden;
-      padding: 8px 0;
       display: flex;
       flex-direction: column;
-      margin: 0 8px;
       &:first-child {
         margin-left: 0;
       }
@@ -48,6 +47,16 @@
       }
     }
   }
+  
+  .ability-info-list{
+      margin: 0 8px 0 0;
+      .ability-info-content{
+        .ability-info-item{
+          display:flex;
+          justify-content: space-between;
+        }
+      }
+    }
 }
 
 .basic-info-list {
