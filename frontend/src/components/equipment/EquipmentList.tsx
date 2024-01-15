@@ -4,7 +4,7 @@ import { divideGrade } from "../../api/util";
 
 const EquipmentInfoList = ({ ocid }: any) => {
   const [equipmentInfo, setEquipmentInfo] = useState<EquipmentInfo>({} as EquipmentInfo);
-
+  const [isOpen, setIsOpen] = useState(false);
   const getItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterEquipment(targetOcid);
@@ -20,7 +20,8 @@ const EquipmentInfoList = ({ ocid }: any) => {
   }, [getItemEquipmentInfo, ocid]);
 
   return (
-    <ul className="equipment-info-list">
+    <div className="equipment-info">
+    <ul className={`equipment-info-list ${isOpen && 'isOpen'}`}>
       <h1 className="info-title">장비</h1>
       {equipmentInfo.item_equipment !== undefined
         ? equipmentInfo.item_equipment.map((item) => (
@@ -44,6 +45,8 @@ const EquipmentInfoList = ({ ocid }: any) => {
           ))
         : null}
     </ul>
+    <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button>
+    </div>
   );
 };
 

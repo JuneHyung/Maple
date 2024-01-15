@@ -3,6 +3,7 @@ import { SymbolInfo, getCharacterSymbol } from "../../api/stat";
 
 const SymbolInfoList = ({ocid}: any) =>{
   const [symbolInfo, setSymbolInfo] = useState<SymbolInfo>({} as SymbolInfo);
+  const [isOpen, setIsOpen] = useState(false);
   
   const getSymbolInfo = useCallback(async (ocid: string) => {
     try {
@@ -18,7 +19,8 @@ const SymbolInfoList = ({ocid}: any) =>{
     getSymbolInfo(ocid);
   }, [getSymbolInfo, ocid]);
   return (
-    <ul className="symbol-info-list">
+    <div className="symbol-info">
+    <ul className={`symbol-info-list ${isOpen ? 'isOpen' : ''}`}>
       <h1 className="info-title">심볼</h1>
       {symbolInfo.symbol && symbolInfo.symbol.map((symbol) => (
         <li key={symbol.symbol_name} className="symbol-info-item">
@@ -35,6 +37,8 @@ const SymbolInfoList = ({ocid}: any) =>{
       </li>
       ))}
     </ul>
+    <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button>
+    </div>
   )
 }
 export default SymbolInfoList;

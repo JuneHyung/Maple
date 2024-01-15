@@ -3,7 +3,7 @@ import { LinkSkillInfo, getCharacterLinkSkill } from "../../api/skill";
 
 const LinkSkillInfoList = ({ ocid }: any) => {
   const [linkSkillInfo, setLinkSkillInfo] = useState<LinkSkillInfo>({} as LinkSkillInfo);
-
+  const [isOpen, setIsOpen] = useState(false);
   const getLinkSkillInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterLinkSkill(targetOcid);
@@ -17,7 +17,8 @@ const LinkSkillInfoList = ({ ocid }: any) => {
     getLinkSkillInfo(ocid);
   }, [getLinkSkillInfo, ocid]);
   return (
-    <ul className="link-info-list">
+    <div className="link-info">
+    <ul className={`link-info-list ${isOpen ? 'isOpen' : ''}`}>
       <h1 className="info-title">링크스킬</h1>
       {linkSkillInfo.character_owned_link_skill && (
         <li className="link-info-item">
@@ -48,6 +49,8 @@ const LinkSkillInfoList = ({ ocid }: any) => {
           </li>
         ))}
     </ul>
+    <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button>
+    </div>
   );
 };
 export default LinkSkillInfoList;

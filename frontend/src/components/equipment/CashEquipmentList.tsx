@@ -4,7 +4,7 @@ import { CashEquipmentInfo, getCharacterCashEquipment  } from "../../api/equipme
 
 const CashEquipmentInfoList = ({ ocid }: any) => {
   const [cashEquipmentInfo, setCashEquipmentInfo] = useState<CashEquipmentInfo>({} as CashEquipmentInfo);
-
+  const [isOpen, setIsOpen] = useState(false);
   const getCashItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterCashEquipment(targetOcid);
@@ -79,12 +79,21 @@ const CashEquipmentInfoList = ({ ocid }: any) => {
     }
   }
 
+  const OpenButton = (presetNo: number) => {
+    const equipmentList = presetNo===3 ? cashEquipmentInfo.cash_item_equipment_preset_3 : presetNo===2 ? cashEquipmentInfo.cash_item_equipment_preset_2 : cashEquipmentInfo.cash_item_equipment_preset_1;
+    return equipmentList.length>6 ? <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button> : null;
+  }
+
   return (
-    <ul className="equipment-info-list">
+    <div className="equipment-info">
+    <ul className={`equipment-info-list ${isOpen && 'isOpen'}`}>
     <h1 className="info-title">CASH 장비</h1>
     {cashEquipmentInfo.preset_no && SwitchPreset(cashEquipmentInfo.preset_no)}
-    
   </ul>
+  {
+    cashEquipmentInfo.preset_no && OpenButton(cashEquipmentInfo.preset_no)
+  }
+  </div>
   );
 };
 

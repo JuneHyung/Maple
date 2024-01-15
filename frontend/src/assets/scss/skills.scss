@@ -1,53 +1,59 @@
 .skill-info-page{
   display:flex;
-  .skill-info-list{
-    width: 300px;
-    padding: 8px 0;
-    display: flex;
-    flex-direction: column;
-    margin: 0 4px;
-    &:first-child{margin-left: 0;}
-    .skill-info-item{
-      display:flex;
-      position:relative;
-      margin: 4px 0;
-      padding: 8px;
-      background-color:rgba(255,255,255,0.2);
-      cursor: pointer;
-      &:hover .skill-detail{
-        display:block;
-      }
-      .skill-icon{
-        text-align: center;
-        margin-right:4px;
-        .skill-skill-level{
-          font-size:0.8rem;
+  .skill-info{
+
+    .skill-info-list{
+      width: 300px;
+      height:450px;
+      overflow:hidden;
+      padding: 8px 0;
+      display: flex;
+      flex-direction: column;
+      margin: 0 4px;
+      &:first-child{margin-left: 0;}
+      .skill-info-item{
+        display:flex;
+        position:relative;
+        margin: 4px 0;
+        padding: 8px;
+        background-color:rgba(255,255,255,0.2);
+        cursor: pointer;
+        &:hover .skill-detail{
+          display:block;
         }
-      }
-      .skill-introduce{
-        .skill-name{
-          margin-bottom:4px;
+        .skill-icon{
+          text-align: center;
+          margin-right:4px;
+          .skill-skill-level{
+            font-size:0.8rem;
+          }
         }
-        .skill-effect{
-          font-size:0.8rem;
-          color:#dbdbdb;
-          font-family: inherit;
-          white-space: pre-line;
-        } 
-      }
-      .skill-detail{
-        display:none;
-        position:absolute;
-        top:0;
-        left: 30%;
-        padding:8px;
-        background: black;
-        width:auto;
-        .skill-description{
-          border:none;
-          width:100%;
-          font-family: inherit;
-          white-space: pre-line;
+        .skill-introduce{
+          .skill-name{
+            margin-bottom:4px;
+          }
+          .skill-effect{
+            font-size:0.8rem;
+            color:#dbdbdb;
+            font-family: inherit;
+            white-space: pre-line;
+          } 
+        }
+        .skill-detail{
+          display:none;
+          position:absolute;
+          top:0;
+          left: 30%;
+          padding:8px;
+          background: black;
+          z-index:9999;
+          width:auto;
+          .skill-description{
+            border:none;
+            width:100%;
+            font-family: inherit;
+            white-space: pre-line;
+          }
         }
       }
     }
