@@ -33,7 +33,7 @@
           }
           .skill-effect{
             font-size:0.8rem;
-            color:#dbdbdb;
+            color:$text-middle-color;
             font-family: inherit;
             white-space: pre-line;
           } 
@@ -50,6 +50,8 @@
           .skill-description{
             border:none;
             width:100%;
+            font-size:0.8rem;
+            color:$text-middle-color;
             font-family: inherit;
             white-space: pre-line;
           }
@@ -80,6 +82,7 @@
         display:flex;
         flex:3;
       }
+      .hexa-stat-name{margin-right:4px;}
     }
     .main-stat-item{
       background-color: #43437e;

@@ -30,7 +30,7 @@ const HexaStatInfoList = ({ ocid }: any) => {
               <li className="hexa-stat-item main-stat-item">
                 <p className="hexa-stat-level">Lv.{stat.main_stat_level} </p>
                 <p className="hexa-stat-info">
-                  <span>{stat.main_stat_name} </span>
+                  <span className="hexa-stat-name">{stat.main_stat_name} </span>
                   <span>{`+${calcHexaPlusScore(stat.main_stat_level, stat.main_stat_name, 'main')}`}{(stat.main_stat_name!=='공격력 증가' &&stat.main_stat_name!=='주력 스탯 증가') && '%'}</span>
                 </p>
               </li>
@@ -38,7 +38,7 @@ const HexaStatInfoList = ({ ocid }: any) => {
                 <span className="hexa-stat-level">
                   Lv.{stat.sub_stat_level_1}
                 </span>
-                <span>{stat.sub_stat_name_1} </span>
+                <span className="hexa-stat-name">{stat.sub_stat_name_1} </span>
                 <span>
                   +
                   {calcHexaPlusScore(
@@ -52,7 +52,7 @@ const HexaStatInfoList = ({ ocid }: any) => {
                 <span className="hexa-stat-level">
                   Lv.{stat.sub_stat_level_2}
                 </span>
-                <span>{stat.sub_stat_name_2} </span>
+                <span className="hexa-stat-name">{stat.sub_stat_name_2} </span>
                 <span>
                   +
                   {calcHexaPlusScore(

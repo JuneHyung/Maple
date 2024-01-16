@@ -27,7 +27,7 @@ const LinkSkillInfoList = ({ ocid }: any) => {
           </div>
           <div className="link-description">
             <p className="link-skill-name">
-              {linkSkillInfo.character_owned_link_skill.skill_name} <span>Lv.{linkSkillInfo.character_owned_link_skill.skill_level}</span>
+              {linkSkillInfo.character_owned_link_skill.skill_name} <span className="link-skill-level">Lv.{linkSkillInfo.character_owned_link_skill.skill_level}</span>
             </p>
             <p className="link-skill-effect">{linkSkillInfo.character_owned_link_skill.skill_effect} </p>
           </div>
@@ -42,7 +42,7 @@ const LinkSkillInfoList = ({ ocid }: any) => {
             <div className="link-description">
               <p className="link-skill-name">
                 {skill.skill_name}
-                <span>Lv.{skill.skill_level}</span>
+                <span className="link-skill-level">Lv.{skill.skill_level}</span>
               </p>
               <p className="link-skill-effect">{skill.skill_effect} </p>
             </div>
