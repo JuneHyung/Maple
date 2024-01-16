@@ -1,4 +1,4 @@
-# <img src="./images/pinkbean.gif" style="width:100px; height:80px;"/>MapleJJANG
+# <img src="./images/pinkbean.gif" style="width:60px; height:40px;"/>MapleJJANG
 Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비스** 입니다.
 
 완전 메짱이셔
@@ -17,16 +17,12 @@ Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비�
 
 ## 🤼‍♂️ 개요
 
----
-
 - 프로젝트 이름 : MapleJJANG
 - 기술 Stack : React, Typescript, Node.js
 
 <br/>
 
 ## 🎯 목표
-
----
 
 * 생각한 기능 구현
   * 직업랭킹, 스탯, 스킬(하이퍼스탯, 5차, 6차 관련, 유니온) 조회
@@ -36,8 +32,6 @@ Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비�
 <br/>
 
 ## 👀 MapleJJANG(메짱)의 분야별 기능 소개
-
----
 
 ### 👉 메인 화면
 
