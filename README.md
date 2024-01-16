@@ -1,4 +1,4 @@
-# <img src="./images/pinkbean.gif" style="width:50px; height:44px;"/>MapleJJANG
+# <img src="./images/pinkbean.gif" style="width:50px; height:44px;"/> MapleJJANG
 Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비스** 입니다.
 
 완전 메짱이셔
@@ -6,8 +6,6 @@ Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비�
 <br/>
 
 ## 🚩 기획 배경
-
----
 
 가끔씩 이벤트때마다 즐기던 메이플스토리에서 항상 새로운 캐릭터를 키울때 해당 직업의 스킬트리, 스탯정보등을 검색해서 찾아 보았습니다.
 
