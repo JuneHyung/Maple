@@ -1,4 +1,4 @@
-# <img src="./images/pinkbean.gif" style="width:60px; height:40px;"/>MapleJJANG
+# <img src="./images/pinkbean.gif" style="width:50px; height:44px;"/>MapleJJANG
 Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비스** 입니다.
 
 완전 메짱이셔
