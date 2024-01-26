@@ -3,7 +3,9 @@
   padding: 8px 0;
   .stat-info {
     margin: 0 8px 20px 8px;
-    &:first-child{margin-left:0;}
+    &:first-child {
+      margin-left: 0;
+    }
     .stat-info-list {
       width: 300px;
       height: 300px;
@@ -47,16 +49,16 @@
       }
     }
   }
-  
-  .ability-info-list{
-      margin: 0 8px 0 0;
-      .ability-info-content{
-        .ability-info-item{
-          display:flex;
-          justify-content: space-between;
-        }
+
+  .ability-info-list {
+    margin: 0 8px 0 0;
+    .ability-info-content {
+      .ability-info-item {
+        display: flex;
+        justify-content: space-between;
       }
     }
+  }
 }
 
 .basic-info-list {

@@ -19,6 +19,7 @@ const statusList: TabStatus = [
   { label: "장비", path: "equipment" },
   { label: "유니온", path: "union" },
 ];
+
 const TabContent = ({ ocid, handleOCID, setCharacterName }: any) => {
   const [curStatus, setCurStatus] = useState<PathInfo>({ label: "스탯", path: "stat" });
 
@@ -28,34 +29,34 @@ const TabContent = ({ ocid, handleOCID, setCharacterName }: any) => {
 
   return (
     <div className="tab-content">
-        {ocid.length === 0 ? (
-          <Routes>
-            <Route path="/" element={<RankInfoPage handleOCID={handleOCID}  setCharacterName={setCharacterName}/>} />
-            <Route path="*" element={<RedirectPage path="/"/>} />
-          </Routes>
-        ) : (
-          <>
-            <BasicInfoList ocid={ocid} />
-            <ul className="tab-list">
-              {statusList.map((status) => (
-                <li key={status.path} className={`${curStatus.path === status.path && "cur-active-item"} tab-item`}>
-                  <Link to={`${status.path}`} onClick={() => handleCurStatus(status)}>
-                    {status.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      {ocid.length === 0 ? (
+        <Routes>
+          <Route path="/" element={<RankInfoPage handleOCID={handleOCID} setCharacterName={setCharacterName} />} />
+          <Route path="*" element={<RedirectPage path="/" />} />
+        </Routes>
+      ) : (
+        <>
+          <BasicInfoList ocid={ocid} />
+          <ul className="tab-list">
+            {statusList.map((status) => (
+              <li key={status.path} className={`${curStatus.path === status.path && "cur-active-item"} tab-item`}>
+                <Link to={`${status.path}`} onClick={() => handleCurStatus(status)}>
+                  {status.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-            <Routes>
-              <Route path="/" element={<RedirectPage path="/stat"/>} />
-              <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
-              <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
-              <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />
-              <Route path="/union" element={<UnionInfoPage ocid={ocid} />} />
-              <Route path="*" element={<NoData />} />
-            </Routes>
-          </>
-        )}
+          <Routes>
+            <Route path="/" element={<RedirectPage path="/stat" />} />
+            <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
+            <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
+            <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />
+            <Route path="/union" element={<UnionInfoPage ocid={ocid} />} />
+            <Route path="*" element={<NoData />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 };

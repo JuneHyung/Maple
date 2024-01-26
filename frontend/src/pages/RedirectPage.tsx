@@ -1,11 +1,11 @@
-import { useEffect } from "react"
-import { useNavigate } from "react-router"
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
-const RedirectPage = ({path}: any) =>{
-  const nav=useNavigate();
-  useEffect(()=>{
-    nav(path)
-  },[nav, path])
+const RedirectPage = ({ path }: any) => {
+  const nav = useNavigate();
+  useEffect(() => {
+    nav(path);
+  }, [nav, path]);
   return null;
-}
-export default RedirectPage
+};
+export default RedirectPage;

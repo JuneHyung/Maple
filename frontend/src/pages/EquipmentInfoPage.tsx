@@ -4,7 +4,7 @@ import EquipmentInfoList from "../components/equipment/EquipmentList";
 const EquipmentInfoPage = ({ ocid }: any) => {
   return (
     <div className="equipment-info-page">
-      <EquipmentInfoList ocid={ocid}/>
+      <EquipmentInfoList ocid={ocid} />
       <CashEquipmentInfoList ocid={ocid} />
     </div>
   );

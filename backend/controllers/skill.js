@@ -58,10 +58,27 @@ exports.getCharacterHexaStat = async (req, res, next) => {
         "accept": "application/json"
       }
     })
+    // console.log(data)
+    const hexaStat = [
+      {
+        stat_level: data.character_hexa_stat_core[0].main_stat_level,
+        stat_name: data.character_hexa_stat_core[0].main_stat_name,
+        stat_pos: 'main'
+      },{
+        stat_level: data.character_hexa_stat_core[0].sub_stat_level_1,
+        stat_name: data.character_hexa_stat_core[0].sub_stat_name_1,
+        stat_pos: 'additional'
+      },{
+        stat_level: data.character_hexa_stat_core[0].sub_stat_level_2,
+        stat_name: data.character_hexa_stat_core[0].sub_stat_name_2,
+        stat_pos: 'additional'
+      }
+    ]
+    // console.log(hexaStat);
     const resultData = {
       date: data.date,
       character_class: data.character_class,
-      character_hexa_stat_core: data.character_hexa_stat_core
+      character_hexa_stat_core: hexaStat
     }
     const result = {
       statusCode: 200,

@@ -7,16 +7,19 @@ interface ClassInfo {
   type: CharacterType;
   label: string;
 }
-const RankInfoPage = ({handleOCID, setCharacterName}: any) => {
+const RankInfoPage = ({ handleOCID, setCharacterName }: any) => {
   const [selectedClass, setSelectedClass] = useState<ClassInfo>({} as ClassInfo);
-  const handleSelectedClass = useCallback((character: ClassInfo) => {
-    if(selectedClass.key){
-      if(selectedClass.key===character.key) setSelectedClass({} as ClassInfo);
-      else setSelectedClass(character)
-    }else{
-      setSelectedClass(character)
-    }
-  }, [selectedClass.key])
+  const handleSelectedClass = useCallback(
+    (character: ClassInfo) => {
+      if (selectedClass.key) {
+        if (selectedClass.key === character.key) setSelectedClass({} as ClassInfo);
+        else setSelectedClass(character);
+      } else {
+        setSelectedClass(character);
+      }
+    },
+    [selectedClass.key]
+  );
 
   return (
     <div className="rank-info-page">
@@ -28,7 +31,7 @@ const RankInfoPage = ({handleOCID, setCharacterName}: any) => {
                 <li
                   className={`rank-class-item ${divideCharacterType(character.type as CharacterType)} ${character.key === selectedClass.key ? "selected-item" : ""}`}
                   key={character.label}
-                  onClick={()=>handleSelectedClass(character as ClassInfo)}
+                  onClick={() => handleSelectedClass(character as ClassInfo)}
                 >
                   {character.label}
                 </li>
@@ -37,7 +40,7 @@ const RankInfoPage = ({handleOCID, setCharacterName}: any) => {
           );
         })}
       </ul>
-      <RankInfoList selected={selectedClass} handleOCID={handleOCID} setCharacterName={setCharacterName}/>
+      <RankInfoList selected={selectedClass} handleOCID={handleOCID} setCharacterName={setCharacterName} />
     </div>
   );
 };

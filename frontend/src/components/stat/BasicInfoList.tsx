@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { BasicInfo, getCharacterBasic } from "../../api/stat";
 import { divideNumberComma } from "../../api/util";
 
-const BasicInfoList = ({ocid}:any) =>{
+const BasicInfoList = ({ ocid }: any) => {
   const [basicInfo, setBasicInfo] = useState<BasicInfo>({} as BasicInfo);
+  
   const getBasicInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterBasic(targetOcid);
@@ -43,5 +44,5 @@ const BasicInfoList = ({ocid}:any) =>{
       </div>
     </div>
   );
-}
+};
 export default BasicInfoList;

@@ -2,12 +2,12 @@ import { ChangeEvent, useCallback, useState } from "react";
 import "./assets/scss/app.scss";
 import TabContent from "./components/TabContent";
 import { getData } from "./api";
-import { BrowserRouter, Link} from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 
 interface OCIDResponse {
   ocid: string;
 }
-const App = ({history}: any) => {
+const App = ({ history }: any) => {
   const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
   const [characterName, setCharacterName] = useState("이깅우");
@@ -31,6 +31,7 @@ const App = ({history}: any) => {
     setCharacterName("");
     setOcid("");
   }, []);
+  
   return (
     <BrowserRouter>
       <div className="app">
@@ -47,7 +48,7 @@ const App = ({history}: any) => {
             <div className="search-bar-wrap">
               <input type="text" onChange={handleOnChange} className="search-bar-input" value={characterName} />
               <button onClick={() => handleOnClick(characterName)} className="search-button">
-                  Search
+                Search
               </button>
             </div>
           </header>

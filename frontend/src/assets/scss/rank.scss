@@ -1,72 +1,91 @@
-.rank-info-page{
-  .rank-class-list{
-    .rank-class-row{
-      display:flex;
-      flex-wrap:wrap;
+.rank-info-page {
+  .rank-class-list {
+    .rank-class-row {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
-      &:nth-child(2n){
+      &:nth-child(2n) {
         justify-content: flex-end;
       }
-      .rank-class-item{
-        padding:8px;
+      .rank-class-item {
+        padding: 8px;
         margin: 4px;
-        border-radius:5px;
-        display:flex;
-        flex:1;
+        border-radius: 5px;
+        display: flex;
+        flex: 1;
         align-items: center;
         justify-content: center;
-        font-size:0.8rem;
+        font-size: 0.8rem;
         transition: all 0.2s;
-        cursor:pointer;
-        &:hover{
-          opacity:0.5;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
         }
-        &:first-child{
-          margin-left:0;
+        &:first-child {
+          margin-left: 0;
         }
-        &:last-child{
-          margin-right:0;
+        &:last-child {
+          margin-right: 0;
         }
       }
-      .selected-item{outline:4px solid $highlight-color;}
-      .warrior-block { background-color: $warrior-color; }
-      .archer-block { background-color: $archer-color; }
-      .wizard-block { background-color: $wizard-color; }
-      .thief-block { background-color: $thief-color; }
-      .pirate-block { background-color: $pirate-color; }
-      .other-block { background-color: $maple-point-color; }
+      .selected-item {
+        outline: 4px solid $highlight-color;
+      }
+      .warrior-block {
+        background-color: $warrior-color;
+      }
+      .archer-block {
+        background-color: $archer-color;
+      }
+      .wizard-block {
+        background-color: $wizard-color;
+      }
+      .thief-block {
+        background-color: $thief-color;
+      }
+      .pirate-block {
+        background-color: $pirate-color;
+      }
+      .other-block {
+        background-color: $maple-point-color;
+      }
     }
   }
-  .rank-info-list{
-    display:flex;
-    flex-wrap:wrap;
-    margin-top:20px;
+  .rank-info-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
     justify-content: space-between;
-    .rank-info-item{
-      display:flex;
+    .rank-info-item {
+      display: flex;
       flex-direction: column;
-      width:19.5%;
+      width: 19.5%;
       box-sizing: border-box;
       padding: 0.5rem;
       margin: 4px 0;
-      border-radius:5px;
+      border-radius: 5px;
       border: 2px solid #da7f99;
-      cursor:pointer;
-      &:hover{
+      cursor: pointer;
+      &:hover {
         background-color: #ad6faa;
       }
-      .rank-info-row{
-        margin:4px;
-        &:first-child{
-          margin-top:0;
+      .rank-info-row {
+        margin: 4px;
+        &:first-child {
+          margin-top: 0;
         }
-        .rank-number{font-size:1.12rem;}
-        .character-world-name{
+        .rank-number {
+          font-size: 1.12rem;
+        }
+        .character-world-name {
           border-radius: 4px;
-          background-color:#777;
-          padding:2px 4px;
-          margin-right: 8px;}
-        .character-level{margin-right: 8px;}
+          background-color: #777;
+          padding: 2px 4px;
+          margin-right: 8px;
+        }
+        .character-level {
+          margin-right: 8px;
+        }
       }
     }
   }

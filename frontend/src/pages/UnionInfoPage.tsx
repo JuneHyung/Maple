@@ -6,6 +6,7 @@ import { divideCharacterType } from "../api/util";
 const UnionInfoPage = ({ ocid }: any) => {
   const [unionInfo, setUnionInfo] = useState({} as UnionInfo);
   const [unionRaiderInfo, setUnionRaiderInfo] = useState({} as UnionRaiderInfo);
+  
   const getUnionInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterUnion(targetOcid);

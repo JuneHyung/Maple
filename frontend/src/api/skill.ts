@@ -4,25 +4,19 @@ import { PlusScore } from "./util";
 const baseDay = dayjs().subtract(1, "day").format("YYYY-MM-DD");
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
-interface CharacterLinkSkill{
-  "skill_name": string,
-  "skill_description": string,
-  "skill_level": number,
-  "skill_effect": string,
-  "skill_icon": string
+interface CharacterLinkSkill {
+  skill_name: string;
+  skill_description: string;
+  skill_level: number;
+  skill_effect: string;
+  skill_icon: string;
 }
-interface CharacterOwnedLinkSkill{
-  "skill_name": string,
-  "skill_description": string,
-  "skill_level": number,
-  "skill_effect": string,
-  "skill_icon": string
-}
-export interface LinkSkillInfo{
-  "date": string,
-  "character_class": string,
-  "character_link_skill": CharacterLinkSkill[],
-  "character_owned_link_skill": CharacterOwnedLinkSkill
+type CharacterOwnedLinkSkill = CharacterLinkSkill;
+export interface LinkSkillInfo {
+  date: string;
+  character_class: string;
+  character_link_skill: CharacterLinkSkill[];
+  character_owned_link_skill: CharacterOwnedLinkSkill;
 }
 
 export const getCharacterLinkSkill = async (ocid: string) => {
@@ -32,20 +26,19 @@ export const getCharacterLinkSkill = async (ocid: string) => {
   return response.result;
 };
 
-
-interface CharacterSkill  {
-  "skill_name": string,
-  "skill_description": string,
-  "skill_level": number,
-  "skill_effect": string,
-  "skill_icon": string,
+interface CharacterSkill {
+  skill_name: string;
+  skill_description: string;
+  skill_level: number;
+  skill_effect: string;
+  skill_icon: string;
 }
 
-export interface SkillInfo{
-  "date": string,
-  "character_class": string,
-  "character_skill_grade": number,
-  "character_skill": CharacterSkill[]
+export interface SkillInfo {
+  date: string;
+  character_class: string;
+  character_skill_grade: number;
+  character_skill: CharacterSkill[];
 }
 
 export const getCharacterSkills = async (ocid: string, grade: string | number) => {
@@ -53,26 +46,31 @@ export const getCharacterSkills = async (ocid: string, grade: string | number) =
     params: {
       ocid,
       date: baseDay,
-      character_skill_grade: grade
-    }
-  })
+      character_skill_grade: grade,
+    },
+  });
   return response.result;
-}
+};
 
-interface CharacterHexaStatCore{
-  "slot_id": string
-  "main_stat_name": keyof PlusScore,
-  "sub_stat_name_1": keyof PlusScore,
-  "sub_stat_name_2": keyof PlusScore,
-  "main_stat_level": number,
-  "sub_stat_level_1": number,
-  "sub_stat_level_2": number,
-  "stat_grade": number,
+// interface CharacterHexaStatCore {
+//   slot_id: string;
+//   main_stat_name: keyof PlusScore;
+//   sub_stat_name_1: keyof PlusScore;
+//   sub_stat_name_2: keyof PlusScore;
+//   main_stat_level: number;
+//   sub_stat_level_1: number;
+//   sub_stat_level_2: number;
+//   stat_grade: number;
+// }
+interface CharacterHexaStatCore {
+  stat_name: keyof PlusScore;
+  stat_level: number;
+  stat_pos: 'main' | 'additional';
 }
 export interface HexaStatInfo {
-  "date": string,
-  "character_class": string,
-  "character_hexa_stat_core": CharacterHexaStatCore[]
+  date: string;
+  character_class: string;
+  character_hexa_stat_core: CharacterHexaStatCore[];
 }
 
 export const getCharacterHexaStat = async (ocid: string) => {
@@ -80,7 +78,7 @@ export const getCharacterHexaStat = async (ocid: string) => {
     params: {
       ocid,
       date: baseDay,
-    }
-  })
+    },
+  });
   return response.result;
-}
+};

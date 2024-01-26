@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const UnionTable =({info}: any) => {
   const [posInfo, setPosInfo] = useState([]);
   const arr = Array.from({length: 20},(_,i)=>Array.from({length: 22},(_,j)=>i*22+j))
+
   useEffect(()=>{
     if(info.union_block){
       
@@ -45,6 +46,7 @@ const UnionTable =({info}: any) => {
     }
     return '';
   }
+  
   return (
     <div className="union-table">
       {

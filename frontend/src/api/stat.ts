@@ -68,16 +68,10 @@ export interface HyperStatPreset {
   stat_increase: string;
 }
 export interface HyperStat {
-  // "date": string,
-  // "character_class": string,
-  // "use_preset_no": string,
-  // "use_available_hyper_stat": number,
-  hyper_stat_preset_1: HyperStatPreset[];
-  hyper_stat_preset_1_remain_point: number;
-  hyper_stat_preset_2: HyperStatPreset[];
-  hyper_stat_preset_2_remain_point: number;
-  hyper_stat_preset_3: HyperStatPreset[];
-  hyper_stat_preset_3_remain_point: number;
+  date: string;
+  preset_no: number;
+  hyper_stat_list: HyperStatPreset[];
+  hyper_stat_remain_point: number;
 }
 export const getCharacterHyperStat = async (ocid: string) => {
   const response = await getData<HyperStat>(`${baseUrl}/stat/hyper`, {
@@ -86,24 +80,24 @@ export const getCharacterHyperStat = async (ocid: string) => {
   return response.result;
 };
 
-interface Symbol{
-  "symbol_name": string,
-  "symbol_icon": string,
-  "symbol_description": string,
-  "symbol_force": string,
-  "symbol_level": number,
-  "symbol_str": string,
-  "symbol_dex": string,
-  "symbol_int": string,
-  "symbol_luk": string,
-  "symbol_hp": string,
-  "symbol_growth_count": number,
-  "symbol_require_growth_count": number
+interface Symbol {
+  symbol_name: string;
+  symbol_icon: string;
+  symbol_description: string;
+  symbol_force: string;
+  symbol_level: number;
+  symbol_str: string;
+  symbol_dex: string;
+  symbol_int: string;
+  symbol_luk: string;
+  symbol_hp: string;
+  symbol_growth_count: number;
+  symbol_require_growth_count: number;
 }
 export interface SymbolInfo {
-  "date": string,
-  "character_class": string,
-  "symbol": Symbol[]
+  date: string;
+  character_class: string;
+  symbol: Symbol[];
 }
 
 export const getCharacterSymbol = async (ocid: string) => {

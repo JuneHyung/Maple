@@ -34,9 +34,24 @@ exports.getCharacterCashEquipment = async (req, res, next) => {
         accept: "application/json",
       },
     });
+
+    const {preset_no, cash_item_equipment_preset_1, cash_item_equipment_preset_2, cash_item_equipment_preset_3} = data;
+    const resultData = {date: data.date, preset_no:data.preset_no, cash_item_equipment_list: []};
+    switch(preset_no){
+      case 1:
+        resultData["cash_item_equipment_list"] = cash_item_equipment_preset_1;
+        break;
+      case 2: 
+        resultData["cash_item_equipment_list"] = cash_item_equipment_preset_2;
+        break;
+      case 3: 
+          resultData["cash_item_equipment_list"] = cash_item_equipment_preset_3;
+        break;
+      default: break;
+    }
     const result = {
       statusCode: 200,
-      result: data,
+      result: resultData,
     };
     res.status(200).json(result);
   } catch (e) {

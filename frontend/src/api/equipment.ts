@@ -5,16 +5,16 @@ const baseDay = dayjs().subtract(1, "day").format("YYYY-MM-DD");
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
 interface ItemCommonOption {
-  str: string
-  dex: string
-  int: string
-  luk: string
-  max_hp: string
-  max_mp: string
-  attack_power: string
-  magic_power: string
+  str: string;
+  dex: string;
+  int: string;
+  luk: string;
+  max_hp: string;
+  max_mp: string;
+  attack_power: string;
+  magic_power: string;
 }
-interface ItemBaseOption extends ItemCommonOption{
+interface ItemBaseOption extends ItemCommonOption {
   armor: string;
   speed: string;
   jump: string;
@@ -37,8 +37,8 @@ interface ItemTotalOption extends ItemCommonOption {
   max_hp_rate: string;
   max_mp_rate: string;
 }
-interface ItemExceptionalOption extends ItemCommonOption{}
-interface ItemAddOption extends ItemCommonOption{
+interface ItemExceptionalOption extends ItemCommonOption {}
+interface ItemAddOption extends ItemCommonOption {
   armor: string;
   speed: string;
   jump: string;
@@ -47,12 +47,12 @@ interface ItemAddOption extends ItemCommonOption{
   all_stat: string;
   equipment_level_decrease: number;
 }
-interface ItemEtcOption extends ItemCommonOption{
+interface ItemEtcOption extends ItemCommonOption {
   armor: string;
   speed: string;
   jump: string;
 }
-interface ItemStarforceOption extends ItemCommonOption{
+interface ItemStarforceOption extends ItemCommonOption {
   armor: string;
   speed: string;
   jump: string;
@@ -126,164 +126,35 @@ export const getCharacterEquipment = async (ocid: string) => {
   return response.result;
 };
 
-
-export interface CashEquipmentInfo{
-  "date": string,
-  "character_gender": string,
-  "character_class": string,
-  "preset_no": number,
-  "cash_item_equipment_preset_1": [
+interface CashItemEquipment {
+  cash_item_equipment_part: string;
+  cash_item_equipment_slot: string;
+  cash_item_name: string;
+  cash_item_icon: string;
+  cash_item_description: string;
+  cash_item_option: [
     {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
+      option_type: string;
+      option_value: string;
     }
-  ],
-  "cash_item_equipment_preset_2": [
-    {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
-    }
-  ],
-  "cash_item_equipment_preset_3": [
-    {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
-    }
-  ],
-  "additional_cash_item_equipment_preset_1": [
-    {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
-    }
-  ],
-  "additional_cash_item_equipment_preset_2": [
-    {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
-    }
-  ],
-  "additional_cash_item_equipment_preset_3": [
-    {
-      "cash_item_equipment_part": string,
-      "cash_item_equipment_slot": string,
-      "cash_item_name": string,
-      "cash_item_icon": string,
-      "cash_item_description": string,
-      "cash_item_option": [
-        {
-          "option_type": string,
-          "option_value": string
-        }
-      ],
-      "date_expire": string,
-      "date_option_expire": string,
-      "cash_item_label": string,
-      "cash_item_coloring_prism": {
-        "color_range": string,
-        "hue": number,
-        "saturation": number,
-        "value": number
-      },
-      "base_preset_item_disable_flag": string
-    }
-  ]
+  ];
+  date_expire: string;
+  date_option_expire: string;
+  cash_item_label: string;
+  cash_item_coloring_prism: {
+    color_range: string;
+    hue: number;
+    saturation: number;
+    value: number;
+  };
+  base_preset_item_disable_flag: string;
 }
 
+export interface CashEquipmentInfo {
+  date: string;
+  preset_no: number;
+  cash_item_equipment_list: CashItemEquipment[];
+}
 
 // 장착 캐시 장비 정보 조회
 export const getCharacterCashEquipment = async (ocid: string) => {

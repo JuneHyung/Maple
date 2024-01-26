@@ -14,7 +14,7 @@ $archer-color: #8faf44;
 $wizard-color: #2e97ad;
 $thief-color: #9a65aa;
 $pirate-color: #bbbabb;
-$hybrid-color: linear-gradient(#bbbabb 0%,#9a65aa 100%); 
+$hybrid-color: linear-gradient(#bbbabb 0%, #9a65aa 100%);
 
 $union-table-border-color: rgba(255, 248, 232, 0.1);
 $union-table-bg-color: linear-gradient(#4c4f5d 0%, #27282e 100%);
@@ -25,10 +25,18 @@ $pinkbean-low-color: #fbc4c7;
 $pinkbean-high-color: #943376;
 $pinkbean-bg-color: #f7f2f3;
 
-.rank-legend{color:$legend-color;}
-.rank-unique{color:$unique-color;}
-.rank-epic{color:$epic-color;}
-.rank-rare{color:$rare-color;}
+.rank-legend {
+  color: $legend-color;
+}
+.rank-unique {
+  color: $unique-color;
+}
+.rank-epic {
+  color: $epic-color;
+}
+.rank-rare {
+  color: $rare-color;
+}
 
 * {
   &::-webkit-scrollbar {
@@ -46,4 +54,10 @@ $pinkbean-bg-color: #f7f2f3;
     background-color: $pinkbean-point-color;
   }
 }
-.info-title{ font-size:1.5rem; color: $pinkbean-point-color; border-bottom:3px solid $pinkbean-low-color; margin-bottom:20px; padding-bottom:4px;}
+.info-title {
+  font-size: 1.5rem;
+  color: $pinkbean-point-color;
+  border-bottom: 3px solid $pinkbean-low-color;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+}

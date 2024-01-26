@@ -83,7 +83,7 @@ exports.getCharacterAbility = async (req, res, next) => {
       statusCode: 200,
       result: data,
     };
-    console.log(result);
+    // console.log(result);
     res.status(200).json(result);
   } catch (e) {
     console.log(e);
@@ -92,7 +92,7 @@ exports.getCharacterAbility = async (req, res, next) => {
 
 exports.getCharacterHyperStat = async (req, res, next) => {
   const { ocid, date } = req.query;
-  // console.log('d', ocid, date);
+  
   try {
     const { data } = await axios.get(`${process.env.NODE_APP_MAPLE_BASE_URL}/character/hyper-stat`, {
       params: { ocid, date },
@@ -103,9 +103,35 @@ exports.getCharacterHyperStat = async (req, res, next) => {
       },
     });
     // console.log(data)
+    const { use_preset_no, hyper_stat_preset_1, hyper_stat_preset_2, hyper_stat_preset_3, hyper_stat_preset_1_remain_point, hyper_stat_preset_2_remain_point, hyper_stat_preset_3_remain_point} = data;
+    const resultData = {
+      date: data.date,
+      preset_no: Number(use_preset_no),
+      hyper_stat_list: [],
+      hyper_stat_remain_point: 0
+    }
+
+    switch(Number(use_preset_no)){
+      case 1:
+        resultData["hyper_stat_list"] = hyper_stat_preset_1;
+        resultData["hyper_stat_remain_point"] = hyper_stat_preset_1_remain_point;
+        break;
+      case 2:
+        resultData["hyper_stat_list"] = hyper_stat_preset_2;
+        resultData["hyper_stat_remain_point"] = hyper_stat_preset_2_remain_point;
+        break;
+      case 3:
+        resultData["hyper_stat_list"] = hyper_stat_preset_3;
+        resultData["hyper_stat_remain_point"] = hyper_stat_preset_3_remain_point;
+        break;
+      default: break;
+    }
+
+    // console.log(resultData)
+
     const result = {
       statusCode: 200,
-      result: data,
+      result: resultData,
     };
     res.status(200).json(result);
   } catch (e) {
@@ -130,7 +156,7 @@ exports.getCharacterSymbol = async (req, res, next) => {
       statusCode: 200,
       result: data,
     };
-    console.log(result);
+    // console.log(result);
     res.status(200).json(result);
   } catch (e) {
     console.log(e);

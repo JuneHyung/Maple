@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { EquipmentInfo, getCharacterEquipment } from "../../api/equipment";
 import { divideGrade } from "../../api/util";
+import EquipmentListItem from "./EquipmentListItem";
 
 const EquipmentInfoList = ({ ocid }: any) => {
   const [equipmentInfo, setEquipmentInfo] = useState<EquipmentInfo>({} as EquipmentInfo);
@@ -21,31 +22,17 @@ const EquipmentInfoList = ({ ocid }: any) => {
 
   return (
     <div className="equipment-info">
-    <ul className={`equipment-info-list ${isOpen && 'isOpen'}`}>
-      <h1 className="info-title">장비</h1>
-      {equipmentInfo.item_equipment !== undefined
-        ? equipmentInfo.item_equipment.map((item) => (
-            <li key={item.item_equipment_slot} className="equipment-info-item">
-              <div className="equipment-img-wrap">
-                <div className="equipment-icon">
-                  <img src={item.item_icon} alt={`${item.item_name} icon`} />
-                </div>
-                <div className="equipment-description">
-                  <p className="font-bold">{item.item_equipment_slot}</p>
-                  <p className="item-name ellipsis-1 font-bold">{item.item_name}</p>
-                  <p className="star-force font-bold">★ {item.starforce} </p>
-                </div>
-              </div>
-              <ul className="item-potential-option-list">
-                <li className={`item-potential-option-item ${divideGrade(item.potential_option_grade)}`}>{item.potential_option_1}</li>
-                <li className={`item-potential-option-item ${divideGrade(item.potential_option_grade)}`}>{item.potential_option_2}</li>
-                <li className={`item-potential-option-item ${divideGrade(item.potential_option_grade)}`}>{item.potential_option_3}</li>
-              </ul>
-            </li>
-          ))
-        : null}
-    </ul>
-    <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button>
+      <ul className={`equipment-info-list ${isOpen && "isOpen"}`}>
+        <h1 className="info-title">장비</h1>
+        {equipmentInfo.item_equipment !== undefined
+          ? equipmentInfo.item_equipment.map((item) => (
+              <EquipmentListItem item={item} grade={divideGrade(item.potential_option_grade)} key={item.item_equipment_slot} />
+            ))
+          : null}
+      </ul>
+      <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "접기" : "펼치기"}
+      </button>
     </div>
   );
 };
