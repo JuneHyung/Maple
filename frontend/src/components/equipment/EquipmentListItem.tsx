@@ -1,4 +1,9 @@
-const EquipmentListItem = ({item, grade}: any) => {
+import { PotentialEquipment } from "../../api/equipment";
+import { GradeClass } from "../../api/util";
+
+type EquipmentlistItemProps = {item: PotentialEquipment, grade: GradeClass}
+
+const EquipmentListItem = ({item, grade}: EquipmentlistItemProps) => {
   return (
     <li className="equipment-info-item">
       <div className="equipment-img-wrap">

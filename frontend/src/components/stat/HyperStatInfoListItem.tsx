@@ -1,4 +1,7 @@
-const HyperStatInfoListItem = ({ stat, idx }: any) => {
+import { HyperStatPreset } from "../../api/stat";
+
+type HyperStatInfoListItemProps = {stat: HyperStatPreset, idx: number};
+const HyperStatInfoListItem = ({ stat, idx }: HyperStatInfoListItemProps) => {
   return (
     <li key={`preset${idx + 1}${stat.stat_type}`} className="stat-info-item">
       <span className="stat-name">{stat.stat_type} </span>

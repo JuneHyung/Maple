@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { CashEquipmentInfo, getCharacterCashEquipment } from "../../api/equipment";
 import CashEquipmentListItem from "./CashEquipmentListItem";
-// import { divideGrade } from "../../api/util";
+import { CommonProps } from "../TabContent";
 
-const CashEquipmentInfoList = ({ ocid }: any) => {
+const CashEquipmentInfoList = ({ ocid }: CommonProps) => {
   const [cashEquipmentInfo, setCashEquipmentInfo] = useState<CashEquipmentInfo>({} as CashEquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
   const getCashItemEquipmentInfo = useCallback(async (targetOcid: string) => {

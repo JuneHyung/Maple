@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { AbilityInfoItem, getCharacterAbility } from "../../api/stat";
 import AbilityInfoListItem from "./AbilityInfoListItem";
 import { divideGrade } from "../../api/util";
+import { CommonProps } from "../TabContent";
 
-const AbilityInfoList = ({ ocid }: any) => {
+const AbilityInfoList = ({ ocid }: CommonProps) => {
   const [abilityInfo, setAbilityInfo] = useState<AbilityInfoItem[]>([]);
 
   const getAbilityInfo = useCallback(async (targetOcid: string) => {

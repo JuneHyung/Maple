@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { SkillInfo, getCharacterSkills } from "../../api/skill";
 import SkillInfoListItem from "./SkillInfoListItem";
+import { CommonProps } from "../TabContent";
 
-const SkillInfoList = ({ ocid, grade }: any) => {
+type SkillInfoListProps = CommonProps & {grade: 5 | 6 | 'hyperpassive'}
+
+const SkillInfoList = ({ ocid, grade }: SkillInfoListProps) => {
   const [skillInfoList, setSkillInfoList] = useState<SkillInfo>({} as SkillInfo);
   const [isOpen, setIsOpen] = useState(false);
   

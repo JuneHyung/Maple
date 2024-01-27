@@ -88,7 +88,7 @@ interface ItemInfo {
   date_expire: string;
 }
 
-interface PotentialEquipment extends ItemInfo {
+export interface PotentialEquipment extends ItemInfo {
   potential_option_grade: Grade;
   additional_potential_option_grade: Grade;
   potential_option_1: string;
@@ -126,7 +126,7 @@ export const getCharacterEquipment = async (ocid: string) => {
   return response.result;
 };
 
-interface CashItemEquipment {
+export interface CashItemEquipment {
   cash_item_equipment_part: string;
   cash_item_equipment_slot: string;
   cash_item_name: string;

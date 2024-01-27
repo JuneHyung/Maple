@@ -10,17 +10,17 @@ export interface UnionInfo {
   union_grade: string;
 }
 interface UnionInnerStat {
-  stat_field_id: "string";
-  stat_field_effect: "string";
+  stat_field_id: string;
+  stat_field_effect: string;
 }
-interface CellPosBlock {
+export interface CellPosBlock {
   x: number;
   y: number;
 }
-interface UnionBlock {
+export interface UnionBlock {
   block_type: CharacterType;
-  block_class: "string";
-  block_level: "string";
+  block_class: string;
+  block_level: string;
   block_control_point: CellPosBlock;
   block_position: CellPosBlock[];
 }

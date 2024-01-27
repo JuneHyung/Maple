@@ -1,4 +1,7 @@
-const HexaStatInfoListItem = ({stat, score}: any) => {
+import { CharacterHexaStatCore } from "../../api/skill";
+
+type HexaStatInfoListItemProps = {stat: CharacterHexaStatCore, score: string}
+const HexaStatInfoListItem = ({stat, score}: HexaStatInfoListItemProps) => {
   return (
     <li className="hexa-stat-item">
       <span className="hexa-stat-level">Lv.{stat.stat_level}</span>

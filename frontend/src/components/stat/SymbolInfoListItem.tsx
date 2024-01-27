@@ -1,4 +1,7 @@
-const SymbolInfoListItem = ({ symbol }: any) => {
+import { Symbol } from "../../api/stat";
+
+type SymbolInfoListItemProps = {symbol: Symbol};
+const SymbolInfoListItem = ({ symbol }: SymbolInfoListItemProps) => {
   return (
     <li key={symbol.symbol_name} className="symbol-info-item">
       <div className="symbol-icon">

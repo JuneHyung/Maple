@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { EquipmentInfo, getCharacterEquipment } from "../../api/equipment";
 import { divideGrade } from "../../api/util";
 import EquipmentListItem from "./EquipmentListItem";
+import { CommonProps } from "../TabContent";
 
-const EquipmentInfoList = ({ ocid }: any) => {
+const EquipmentInfoList = ({ ocid }: CommonProps) => {
   const [equipmentInfo, setEquipmentInfo] = useState<EquipmentInfo>({} as EquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
   const getItemEquipmentInfo = useCallback(async (targetOcid: string) => {

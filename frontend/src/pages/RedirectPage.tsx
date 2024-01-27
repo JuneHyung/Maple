@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-
-const RedirectPage = ({ path }: any) => {
+type RedirectProps = {path: string}
+const RedirectPage = ({ path }: RedirectProps) => {
   const nav = useNavigate();
   useEffect(() => {
     nav(path);

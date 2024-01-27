@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { HyperStat, getCharacterHyperStat } from "../../api/stat";
 import HyperStatInfoListItem from "./HyperStatInfoListItem";
+import { CommonProps } from "../TabContent";
 
 const initialState = {
   date: '',
@@ -16,7 +17,7 @@ const initialState = {
   hyper_stat_remain_point: 0,
 };
 
-const HyperStatInfoList = ({ ocid }: any) => {
+const HyperStatInfoList = ({ ocid }: CommonProps) => {
   const [hyperStatInfo, setHyperStatInfo] = useState<HyperStat>(initialState);
   
   const getHyperStatInfo = useCallback(async (targetOcid: string) => {

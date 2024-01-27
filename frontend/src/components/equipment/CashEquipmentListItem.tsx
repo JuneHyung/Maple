@@ -1,4 +1,7 @@
-const CashEquipmentListItem = ({ item }: any) => {
+import { CashItemEquipment } from "../../api/equipment";
+
+type CashEquipmentListItemProps = {item: CashItemEquipment};
+const CashEquipmentListItem = ({ item }: CashEquipmentListItemProps) => {
   return (
     <li className="equipment-info-item">
       <div className="equipment-img-wrap">

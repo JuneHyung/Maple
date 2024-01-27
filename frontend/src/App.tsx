@@ -7,7 +7,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 interface OCIDResponse {
   ocid: string;
 }
-const App = ({ history }: any) => {
+const App = () => {
   const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
   const [characterName, setCharacterName] = useState("이깅우");

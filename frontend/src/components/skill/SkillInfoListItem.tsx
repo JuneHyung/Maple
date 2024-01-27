@@ -1,4 +1,7 @@
-const SkillInfoListItem = ({ skill }: any) => {
+import { CharacterSkill } from "../../api/skill";
+
+type SkillInfoListItemProps = {skill: CharacterSkill}
+const SkillInfoListItem = ({ skill }: SkillInfoListItemProps) => {
   return (
     <li className="skill-info-item">
       <div className="skill-icon">

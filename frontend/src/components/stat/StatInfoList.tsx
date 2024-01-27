@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { FinalStat, getCharacterStat } from "../../api/stat";
 import StatInfoListItem from "./StatInfoListItem";
+import { CommonProps } from "../TabContent";
 
-interface StatInfoProps {
-  ocid: string;
-}
-const StatInfoList = ({ ocid }: any) => {
+const StatInfoList = ({ ocid }: CommonProps) => {
   const [statInfo, setStatInfo] = useState<FinalStat[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   

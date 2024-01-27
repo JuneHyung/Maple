@@ -1,7 +1,7 @@
 import { useState } from "react";
 import EquipmentInfoPage from "../pages/EquipmentInfoPage";
 import UnionInfoPage from "../pages/UnionInfoPage";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import NoData from "./NoData";
 import StatInfoPage from "../pages/StatInfoPage";
 import BasicInfoList from "./stat/BasicInfoList";
@@ -19,8 +19,14 @@ const statusList: TabStatus = [
   { label: "장비", path: "equipment" },
   { label: "유니온", path: "union" },
 ];
+export type TabContentProps = {
+  ocid: string, 
+  handleOCID: (character_name: string) => Promise<void>, 
+  setCharacterName: React.Dispatch<React.SetStateAction<string>>
+}
+export type CommonProps = Pick<TabContentProps, 'ocid'>;
 
-const TabContent = ({ ocid, handleOCID, setCharacterName }: any) => {
+const TabContent = ({ ocid, handleOCID, setCharacterName }: TabContentProps) => {
   const [curStatus, setCurStatus] = useState<PathInfo>({ label: "스탯", path: "stat" });
 
   const handleCurStatus = (status: PathInfo) => {

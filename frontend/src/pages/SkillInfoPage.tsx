@@ -1,7 +1,8 @@
+import { CommonProps } from "../components/TabContent";
 import HexaStatInfoList from "../components/skill/HexaStatInfoList";
 import SkillInfoList from "../components/skill/SkillInfoList";
 
-const SkillInfoPage = ({ ocid }: any) => {
+const SkillInfoPage = ({ ocid }: CommonProps) => {
   return (
     <div className="skill-info-page">
       <SkillInfoList ocid={ocid} grade="hyperpassive" />

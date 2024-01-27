@@ -2,12 +2,16 @@ import { useCallback, useState } from "react";
 import RankInfoList from "../components/rank/RankInfoList";
 import classList from "../assets/data/data.json";
 import { CharacterType, divideCharacterType } from "../api/util";
-interface ClassInfo {
+import { TabContentProps } from "../components/TabContent";
+export interface ClassInfo {
   key: string;
   type: CharacterType;
   label: string;
 }
-const RankInfoPage = ({ handleOCID, setCharacterName }: any) => {
+
+export type RankInfoPageProps = Omit<TabContentProps, 'ocid'>
+
+const RankInfoPage = ({ handleOCID, setCharacterName }: RankInfoPageProps) => {
   const [selectedClass, setSelectedClass] = useState<ClassInfo>({} as ClassInfo);
   const handleSelectedClass = useCallback(
     (character: ClassInfo) => {

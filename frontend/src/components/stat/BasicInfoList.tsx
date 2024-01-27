@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { BasicInfo, getCharacterBasic } from "../../api/stat";
 import { divideNumberComma } from "../../api/util";
+import { CommonProps } from "../TabContent";
 
-const BasicInfoList = ({ ocid }: any) => {
+const BasicInfoList = ({ ocid }: CommonProps) => {
   const [basicInfo, setBasicInfo] = useState<BasicInfo>({} as BasicInfo);
   
   const getBasicInfo = useCallback(async (targetOcid: string) => {

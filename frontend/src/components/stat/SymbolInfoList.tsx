@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { SymbolInfo, getCharacterSymbol } from "../../api/stat";
 import SymbolInfoListItem from "./SymbolInfoListItem";
+import { CommonProps } from "../TabContent";
 
-const SymbolInfoList = ({ ocid }: any) => {
+const SymbolInfoList = ({ ocid }: CommonProps) => {
   const [symbolInfo, setSymbolInfo] = useState<SymbolInfo>({} as SymbolInfo);
   const [isOpen, setIsOpen] = useState(false);
 

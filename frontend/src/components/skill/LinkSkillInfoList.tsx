@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { LinkSkillInfo, getCharacterLinkSkill } from "../../api/skill";
 import LinkSkillInfoListItem from "./LinkSkillInfoListItem";
+import { CommonProps } from "../TabContent";
 
-const LinkSkillInfoList = ({ ocid }: any) => {
+const LinkSkillInfoList = ({ ocid }: CommonProps) => {
   const [linkSkillInfo, setLinkSkillInfo] = useState<LinkSkillInfo>({} as LinkSkillInfo);
   const [isOpen, setIsOpen] = useState(false);
 

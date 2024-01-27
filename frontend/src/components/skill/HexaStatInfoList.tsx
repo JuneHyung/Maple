@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { HexaStatInfo, getCharacterHexaStat } from "../../api/skill";
 import { calcHexaPlusScore } from "../../api/util";
 import HexaStatInfoListItem from "./HexaStatInfoListItem";
+import { CommonProps } from "../TabContent";
 
-const HexaStatInfoList = ({ ocid }: any) => {
+const HexaStatInfoList = ({ ocid }: CommonProps) => {
   const [hexaStatInfoList, setHexaSkillInfoList] = useState<HexaStatInfo>(
     {} as HexaStatInfo
   );

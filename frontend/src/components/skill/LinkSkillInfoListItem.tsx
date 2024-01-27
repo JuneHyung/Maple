@@ -1,4 +1,7 @@
-const LinkSkillInfoListItem = ({ skill }: any) => {
+import { CharacterLinkSkill } from "../../api/skill";
+
+export type LinkSkillInfoListItemProps = {skill: CharacterLinkSkill}
+const LinkSkillInfoListItem = ({ skill }: LinkSkillInfoListItemProps) => {
   return (
     <li className="link-info-item">
       <div className="link-icon">

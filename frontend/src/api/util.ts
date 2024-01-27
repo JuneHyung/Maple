@@ -4,7 +4,7 @@ export const divideNumberComma = (num: number) => {
 };
 
 export type Grade = "레전드리" | "에픽" | "유니크" | "레어";
-
+export type GradeClass = "rank-legend" | "rank-epic" | "rank-unique" | "rank-rare";
 export const divideGrade = (grade: Grade) => {
   switch (grade) {
     case "레전드리":

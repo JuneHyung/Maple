@@ -80,7 +80,7 @@ export const getCharacterHyperStat = async (ocid: string) => {
   return response.result;
 };
 
-interface Symbol {
+export interface Symbol {
   symbol_name: string;
   symbol_icon: string;
   symbol_description: string;

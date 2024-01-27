@@ -4,7 +4,7 @@ import { PlusScore } from "./util";
 const baseDay = dayjs().subtract(1, "day").format("YYYY-MM-DD");
 const baseUrl = process.env.REACT_APP_BACKEND_URL;
 
-interface CharacterLinkSkill {
+export interface CharacterLinkSkill {
   skill_name: string;
   skill_description: string;
   skill_level: number;
@@ -26,7 +26,7 @@ export const getCharacterLinkSkill = async (ocid: string) => {
   return response.result;
 };
 
-interface CharacterSkill {
+export interface CharacterSkill {
   skill_name: string;
   skill_description: string;
   skill_level: number;
@@ -62,7 +62,7 @@ export const getCharacterSkills = async (ocid: string, grade: string | number) =
 //   sub_stat_level_2: number;
 //   stat_grade: number;
 // }
-interface CharacterHexaStatCore {
+export interface CharacterHexaStatCore {
   stat_name: keyof PlusScore;
   stat_level: number;
   stat_pos: 'main' | 'additional';
