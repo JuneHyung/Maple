@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, { Axios, AxiosRequestConfig } from "axios";
 
 export const api: Axios = axios.create({
   baseURL: "http://localhost:3001",
