@@ -1,18 +1,21 @@
-import { useState } from "react";
-import EquipmentInfoPage from "../pages/EquipmentInfoPage";
-import UnionInfoPage from "../pages/UnionInfoPage";
+import { Suspense, lazy, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import NoData from "./NoData";
-import StatInfoPage from "../pages/StatInfoPage";
 import BasicInfoList from "./stat/BasicInfoList";
-import SkillInfoPage from "../pages/SkillInfoPage";
-import RankInfoPage from "../pages/RankInfoPage";
-import RedirectPage from "../pages/RedirectPage";
+
 interface PathInfo {
   label: string;
   path: string;
 }
 type TabStatus = PathInfo[];
+
+const StatInfoPage = lazy(() => import("../pages/StatInfoPage"));
+const SkillInfoPage = lazy(() => import("../pages/SkillInfoPage"));
+const RankInfoPage = lazy(() => import("../pages/RankInfoPage"));
+const EquipmentInfoPage = lazy(() => import("../pages/EquipmentInfoPage"));
+const UnionInfoPage = lazy(() => import("../pages/UnionInfoPage"));
+const RedirectPage = lazy(() => import("../pages/RedirectPage"));
+
 const statusList: TabStatus = [
   { label: "스탯", path: "stat" },
   { label: "스킬", path: "skill" },
@@ -20,11 +23,11 @@ const statusList: TabStatus = [
   { label: "유니온", path: "union" },
 ];
 export type TabContentProps = {
-  ocid: string, 
-  handleOCID: (character_name: string) => Promise<void>, 
-  setCharacterName: React.Dispatch<React.SetStateAction<string>>
-}
-export type CommonProps = Pick<TabContentProps, 'ocid'>;
+  ocid: string;
+  handleOCID: (character_name: string) => Promise<void>;
+  setCharacterName: React.Dispatch<React.SetStateAction<string>>;
+};
+export type CommonProps = Pick<TabContentProps, "ocid">;
 
 const TabContent = ({ ocid, handleOCID, setCharacterName }: TabContentProps) => {
   const [curStatus, setCurStatus] = useState<PathInfo>({ label: "스탯", path: "stat" });
@@ -53,14 +56,16 @@ const TabContent = ({ ocid, handleOCID, setCharacterName }: TabContentProps) => 
             ))}
           </ul>
 
-          <Routes>
-            <Route path="/" element={<RedirectPage path="/stat" />} />
-            <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
-            <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
-            <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />
-            <Route path="/union" element={<UnionInfoPage ocid={ocid} />} />
-            <Route path="*" element={<NoData />} />
-          </Routes>
+          <Suspense fallback={<div>Loading....</div>}>
+            <Routes>
+              <Route path="/" element={<RedirectPage path="/stat" />} />
+              <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
+              <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
+              <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />
+              <Route path="/union" element={<UnionInfoPage ocid={ocid} />} />
+              <Route path="*" element={<NoData />} />
+            </Routes>
+          </Suspense>
         </>
       )}
     </div>

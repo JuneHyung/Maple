@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import "./assets/scss/app.scss";
 import TabContent from "./components/TabContent";
 import { getData } from "./api";
@@ -12,6 +12,7 @@ const App = () => {
 
   const [characterName, setCharacterName] = useState("이깅우");
   const [ocid, setOcid] = useState("");
+  
   const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
     setCharacterName(e.target.value);
   };
@@ -31,14 +32,17 @@ const App = () => {
     setCharacterName("");
     setOcid("");
   }, []);
-  
+
   return (
     <BrowserRouter>
       <div className="app">
         <div className="content">
           <header className="app-header">
             <div className="logo-wrap">
-              <img src={require("./assets/images/pinkbean.gif")} alt="PinkBean Logo" className="logo-image" />
+              <video className="logo-image" autoPlay loop preload="auto">
+                <source type="video/webm" src={require("./assets/images/pinkbean.webm")} />
+              </video>
+              {/* <img src={} alt="PinkBean Logo"  /> */}
               <h1 className="app-title">
                 <Link to="/" onClick={resetStatus}>
                   완전 메짱이셔

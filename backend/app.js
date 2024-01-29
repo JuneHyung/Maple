@@ -26,6 +26,10 @@ app.use("/api/equipment", equipmentRoutes);
 app.use("/api/skill", skillRoutes);
 
 app.use((req, res, next)=>{
+  res.setHeader('Cache-Control', 'public, max-age=31536000')
+})
+
+app.use((req, res, next)=>{
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`)
   error.status = 404;
   next(error)

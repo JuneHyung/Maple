@@ -25,18 +25,10 @@ $pinkbean-low-color: #fbc4c7;
 $pinkbean-high-color: #943376;
 $pinkbean-bg-color: #f7f2f3;
 
-.rank-legend {
-  color: $legend-color;
-}
-.rank-unique {
-  color: $unique-color;
-}
-.rank-epic {
-  color: $epic-color;
-}
-.rank-rare {
-  color: $rare-color;
-}
+.rank-legend { color: $legend-color; }
+.rank-unique { color: $unique-color; }
+.rank-epic { color: $epic-color; }
+.rank-rare { color: $rare-color; }
 
 * {
   &::-webkit-scrollbar {
@@ -54,6 +46,7 @@ $pinkbean-bg-color: #f7f2f3;
     background-color: $pinkbean-point-color;
   }
 }
+
 .info-title {
   font-size: 1.5rem;
   color: $pinkbean-point-color;
