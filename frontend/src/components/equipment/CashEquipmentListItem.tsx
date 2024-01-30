@@ -1,12 +1,30 @@
+import { useEffect, useRef } from "react";
 import { CashItemEquipment } from "../../api/equipment";
 
 type CashEquipmentListItemProps = {item: CashItemEquipment};
 const CashEquipmentListItem = ({ item }: CashEquipmentListItemProps) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  
+  useEffect(()=>{
+    const callback: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const target = entry.target as HTMLImageElement;
+          target.src = target.dataset.src as string;
+          observer.unobserve(entry.target);
+        }
+      })
+    };
+
+    const obeserver = new IntersectionObserver(callback, {});
+    obeserver.observe(imgRef.current as HTMLImageElement);
+  }, [])
+
   return (
     <li className="equipment-info-item">
       <div className="equipment-img-wrap">
         <div className="equipment-icon">
-          <img src={item.cash_item_icon} alt={`${item.cash_item_name} icon`} />
+          <img data-src={item.cash_item_icon} alt={`${item.cash_item_name} icon`} ref={imgRef} />
         </div>
         <div className="equipment-description">
           <p className="font-bold">

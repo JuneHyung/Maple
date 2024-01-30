@@ -1,11 +1,29 @@
+import { useEffect, useRef } from "react";
 import { CharacterSkill } from "../../api/skill";
 
 type SkillInfoListItemProps = {skill: CharacterSkill}
 const SkillInfoListItem = ({ skill }: SkillInfoListItemProps) => {
+  const imgRef = useRef<HTMLImageElement>(null);
+  
+  useEffect(()=>{
+    const callback: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const target = entry.target as HTMLImageElement;
+          target.src = target.dataset.src as string;
+          observer.unobserve(entry.target);
+        }
+      })
+    };
+
+    const obeserver = new IntersectionObserver(callback, {});
+    obeserver.observe(imgRef.current as HTMLImageElement);
+  }, [])
+
   return (
     <li className="skill-info-item">
       <div className="skill-icon">
-        <img src={skill.skill_icon} alt={`${skill.skill_name} icon`} />
+        <img data-src={skill.skill_icon} alt={`${skill.skill_name} icon`} ref={imgRef}/>
         <p className="skill-skill-level">Lv.{skill.skill_level}</p>
       </div>
       <div className="skill-introduce">
