@@ -20,7 +20,7 @@ const SymbolInfoList = ({ ocid }: CommonProps) => {
   useEffect(() => {
     getSymbolInfo(ocid);
   }, [getSymbolInfo, ocid]);
-
+  
   return (
     <div className="symbol-info">
       <ul className={`symbol-info-list ${isOpen ? "isOpen" : ""}`}>
