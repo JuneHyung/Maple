@@ -8,15 +8,15 @@ interface OCIDResponse {
   ocid: string;
 }
 const App = () => {
-  const baseUrl = process.env.REACT_APP_BACKEND_URL;
-
   const [characterName, setCharacterName] = useState("이깅우");
   const [ocid, setOcid] = useState("");
   
-  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setCharacterName(e.target.value);
-  };
-  const handleOnClick = async (character_name: string) => {
+  },[]);
+
+  const handleOnClick = useCallback(async (character_name: string) => {
+    const baseUrl = process.env.REACT_APP_BACKEND_URL;
     if (character_name) {
       try {
         const response = await getData<OCIDResponse>(`${baseUrl}/user/ocid`, { params: { characterName: character_name } });
@@ -26,7 +26,7 @@ const App = () => {
         setOcid("");
       }
     }
-  };
+  },[]);
 
   const resetStatus = useCallback(() => {
     setCharacterName("");

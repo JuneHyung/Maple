@@ -20,6 +20,7 @@ const initialState = {
 const HyperStatInfoList = ({ ocid }: CommonProps) => {
   const [hyperStatInfo, setHyperStatInfo] = useState<HyperStat>(initialState);
   
+  // ocid로 현재 캐릭터의 하이퍼스탯 정보를 조회.
   const getHyperStatInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterHyperStat(targetOcid);

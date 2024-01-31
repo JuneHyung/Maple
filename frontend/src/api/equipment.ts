@@ -98,9 +98,9 @@ export interface PotentialEquipment extends ItemInfo {
   additional_potential_option_2: string;
   additional_potential_option_3: string;
 }
-type ItemEquipment = PotentialEquipment[];
-type DragonEquipment = ItemInfo[];
-type MechanicEquipment = ItemInfo[];
+export type ItemEquipment = PotentialEquipment[];
+export type DragonEquipment = ItemInfo[];
+export type MechanicEquipment = ItemInfo[];
 
 export interface EquipmentInfo {
   date: string;

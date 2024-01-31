@@ -2,10 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import { CashEquipmentInfo, getCharacterCashEquipment } from "../../api/equipment";
 import CashEquipmentListItem from "./CashEquipmentListItem";
 import { CommonProps } from "../TabContent";
+import OpenButton from "../common/OpenButton";
 
 const CashEquipmentInfoList = ({ ocid }: CommonProps) => {
   const [cashEquipmentInfo, setCashEquipmentInfo] = useState<CashEquipmentInfo>({} as CashEquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
+
+  // ocid로 캐시장비 정보 조회.
   const getCashItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterCashEquipment(targetOcid);
@@ -16,17 +19,11 @@ const CashEquipmentInfoList = ({ ocid }: CommonProps) => {
     }
   }, []);
 
+  // ocid가 바뀌면 재조회.
   useEffect(() => {
     getCashItemEquipmentInfo(ocid);
+    setIsOpen(false);
   }, [getCashItemEquipmentInfo, ocid]);
-
-  const OpenButton = () => {
-    return cashEquipmentInfo.cash_item_equipment_list.length > 6 ? (
-      <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "접기" : "펼치기"}
-      </button>
-    ) : null;
-  };
 
   return (
     <div className="equipment-info">
@@ -38,7 +35,7 @@ const CashEquipmentInfoList = ({ ocid }: CommonProps) => {
             ))
           : null}
       </ul>
-      {cashEquipmentInfo.preset_no && OpenButton()}
+      {cashEquipmentInfo.preset_no && <OpenButton list={cashEquipmentInfo.cash_item_equipment_list} isOpen={isOpen} handleIsOpen={setIsOpen}/> }
     </div>
   );
 };

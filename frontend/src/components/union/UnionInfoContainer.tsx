@@ -4,6 +4,7 @@ import UnionNoData from "./UnionNoData";
 import UnionRaiderList from "./UnionRaiderList";
 import UnionRaiderStatList from "./UnionRaiderStatList";
 
+// 목록 컴포넌트 구분
 type ListComponentProps = {info: UnionRaiderInfo, name: string}
 const ListComponent = ({info, name}: ListComponentProps) => {
   switch(name){

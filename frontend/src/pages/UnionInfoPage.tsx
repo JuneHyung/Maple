@@ -8,6 +8,7 @@ const UnionInfoPage = ({ ocid }: CommonProps) => {
   const [unionInfo, setUnionInfo] = useState({} as UnionInfo);
   const [unionRaiderInfo, setUnionRaiderInfo] = useState({} as UnionRaiderInfo);
 
+  // ocid로 캐릭터의 유니온 정보 조회
   const getUnionInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterUnion(targetOcid);
@@ -18,6 +19,7 @@ const UnionInfoPage = ({ ocid }: CommonProps) => {
     }
   }, []);
 
+  // ocid로 캐릭터의 공격대 정보 조회
   const getUnionRaiderInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterUnionRaider(targetOcid);

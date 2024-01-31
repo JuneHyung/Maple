@@ -13,6 +13,8 @@ export type RankInfoPageProps = Omit<TabContentProps, 'ocid'>
 
 const RankInfoPage = ({ handleOCID, setCharacterName }: RankInfoPageProps) => {
   const [selectedClass, setSelectedClass] = useState<ClassInfo>({} as ClassInfo);
+  
+  // 직업 선택
   const handleSelectedClass = useCallback(
     (character: ClassInfo) => {
       if (selectedClass.key) {

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { SkillInfo, getCharacterSkills } from "../../api/skill";
 import SkillInfoListItem from "./SkillInfoListItem";
 import { CommonProps } from "../TabContent";
+import OpenButton from "../common/OpenButton";
 
 type SkillInfoListProps = CommonProps & {grade: 5 | 6 | 'hyperpassive'}
 
@@ -9,7 +10,8 @@ const SkillInfoList = ({ ocid, grade }: SkillInfoListProps) => {
   const [skillInfoList, setSkillInfoList] = useState<SkillInfo>({} as SkillInfo);
   const [isOpen, setIsOpen] = useState(false);
   
-  const getHyperPassiveSkill = useCallback(
+  // ocid로 현재 사용중인 스킬목록을 grade에 따라 조회
+  const getCharacterSkillsByGrade = useCallback(
     async (targetOcid: string) => {
       try {
         const info = await getCharacterSkills(targetOcid, grade);
@@ -23,8 +25,8 @@ const SkillInfoList = ({ ocid, grade }: SkillInfoListProps) => {
   );
 
   useEffect(() => {
-    getHyperPassiveSkill(ocid);
-  }, [getHyperPassiveSkill, ocid]);
+    getCharacterSkillsByGrade(ocid);
+  }, [getCharacterSkillsByGrade, ocid]);
 
   return (
     <div className="skill-info">
@@ -38,9 +40,7 @@ const SkillInfoList = ({ ocid, grade }: SkillInfoListProps) => {
           })}
       </ul>
       {(grade === 5 || grade === 6) && (
-        <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "접기" : "펼치기"}
-        </button>
+        <OpenButton list={skillInfoList.character_skill} isOpen={isOpen} handleIsOpen={setIsOpen} />
       )}
     </div>
   );

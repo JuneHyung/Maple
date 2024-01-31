@@ -6,6 +6,7 @@ import { CommonProps } from "../TabContent";
 const BasicInfoList = ({ ocid }: CommonProps) => {
   const [basicInfo, setBasicInfo] = useState<BasicInfo>({} as BasicInfo);
   
+  // ocid로 캐릭터의 기본정보를 조회
   const getBasicInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterBasic(targetOcid);

@@ -17,6 +17,7 @@ export interface CellPosBlock {
   x: number;
   y: number;
 }
+// export type PosInfo = CellPosBlock & {};
 export interface UnionBlock {
   block_type: CharacterType;
   block_class: string;

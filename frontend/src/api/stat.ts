@@ -73,6 +73,8 @@ export interface HyperStat {
   hyper_stat_list: HyperStatPreset[];
   hyper_stat_remain_point: number;
 }
+
+// 하이퍼스탯 정보 조회
 export const getCharacterHyperStat = async (ocid: string) => {
   const response = await getData<HyperStat>(`${baseUrl}/stat/hyper`, {
     params: { ocid, date: baseDay },
@@ -100,6 +102,7 @@ export interface SymbolInfo {
   symbol: Symbol[];
 }
 
+// 장착 심볼 정보 조회
 export const getCharacterSymbol = async (ocid: string) => {
   const response = await getData<SymbolInfo>(`${baseUrl}/stat/symbol`, {
     params: { ocid, date: baseDay },

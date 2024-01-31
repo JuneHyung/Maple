@@ -7,6 +7,7 @@ import { CommonProps } from "../TabContent";
 const AbilityInfoList = ({ ocid }: CommonProps) => {
   const [abilityInfo, setAbilityInfo] = useState<AbilityInfoItem[]>([]);
 
+  // ocid로 캐릭터의 어빌리티 정보를 조회
   const getAbilityInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterAbility(targetOcid);

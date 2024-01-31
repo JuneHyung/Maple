@@ -6,6 +6,7 @@ type RankInfoListProps = {selected: ClassInfo } & RankInfoPageProps;
 const RankInfoList = ({ selected, handleOCID, setCharacterName }: RankInfoListProps) => {
   const [rankInfoList, setRankInfoList] = useState<RankInfo>([] as RankInfo);
 
+  // 선택한 직업의 랭킹목록 조회.
   const getRankingInfoList = useCallback(async () => {
     try {
       const info = await getRankOverall(selected.key);
@@ -24,6 +25,7 @@ const RankInfoList = ({ selected, handleOCID, setCharacterName }: RankInfoListPr
     }
   }, [getRankingInfoList, selected.key]);
 
+  // 클릭시 해당 캐릭터 조회
   const handleOnClick = useCallback(
     (character: Ranking) => {
       setCharacterName(character.character_name);

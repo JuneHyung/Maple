@@ -19,6 +19,7 @@ export interface LinkSkillInfo {
   character_owned_link_skill: CharacterOwnedLinkSkill;
 }
 
+// 장착 링크 스킬 정보 조회
 export const getCharacterLinkSkill = async (ocid: string) => {
   const response = await getData<LinkSkillInfo>(`${baseUrl}/skill/link`, {
     params: { ocid, date: baseDay },
@@ -40,7 +41,7 @@ export interface SkillInfo {
   character_skill_grade: number;
   character_skill: CharacterSkill[];
 }
-
+// 스킬 정보 조회
 export const getCharacterSkills = async (ocid: string, grade: string | number) => {
   const response = await getData<SkillInfo>(`${baseUrl}/skill/class`, {
     params: {
@@ -51,17 +52,6 @@ export const getCharacterSkills = async (ocid: string, grade: string | number) =
   });
   return response.result;
 };
-
-// interface CharacterHexaStatCore {
-//   slot_id: string;
-//   main_stat_name: keyof PlusScore;
-//   sub_stat_name_1: keyof PlusScore;
-//   sub_stat_name_2: keyof PlusScore;
-//   main_stat_level: number;
-//   sub_stat_level_1: number;
-//   sub_stat_level_2: number;
-//   stat_grade: number;
-// }
 export interface CharacterHexaStatCore {
   stat_name: keyof PlusScore;
   stat_level: number;
@@ -73,6 +63,7 @@ export interface HexaStatInfo {
   character_hexa_stat_core: CharacterHexaStatCore[];
 }
 
+// HEXA 매트릭스 설정 HEXA 스탯 정보 조회
 export const getCharacterHexaStat = async (ocid: string) => {
   const response = await getData<HexaStatInfo>(`${baseUrl}/skill/hexa/stat`, {
     params: {

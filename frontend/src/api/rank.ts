@@ -16,6 +16,8 @@ export interface Ranking {
   character_guildname: string;
 }
 export type RankInfo = Ranking[];
+
+// 종합 랭킹 정보 조회
 export const getRankOverall = async (classKey: string) => {
   const response = await getData<RankInfo>(`${baseUrl}/user/rank`, {
     params: { classKey, date: baseDay },

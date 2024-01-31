@@ -7,6 +7,7 @@ type EquipmentlistItemProps = {item: PotentialEquipment, grade: GradeClass}
 const EquipmentListItem = ({item, grade}: EquipmentlistItemProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
   
+  // 화면에 표시 중인 이미지만 지연 로딩
   useEffect(()=>{
     const callback: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach(entry=>{

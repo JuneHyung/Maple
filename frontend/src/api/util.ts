@@ -1,3 +1,5 @@
+import { PosInfo } from "../components/union/UnionTable";
+
 export const divideNumberComma = (num: number) => {
   if (num) return Number(num).toLocaleString("ko-KR");
   return null;
@@ -5,6 +7,8 @@ export const divideNumberComma = (num: number) => {
 
 export type Grade = "레전드리" | "에픽" | "유니크" | "레어";
 export type GradeClass = "rank-legend" | "rank-epic" | "rank-unique" | "rank-rare";
+
+// 등급에 따라 클래스 리턴
 export const divideGrade = (grade: Grade) => {
   switch (grade) {
     case "레전드리":
@@ -21,6 +25,8 @@ export const divideGrade = (grade: Grade) => {
 };
 
 export type CharacterType = "전사" | "궁수" | "마법사" | "도적" | "해적";
+
+// 직업 타입에 따라 클래스 리턴
 export const divideCharacterType = (val: CharacterType) => {
   switch (val) {
     case "전사":
@@ -37,6 +43,32 @@ export const divideCharacterType = (val: CharacterType) => {
       return "other-block";
   }
 };
+
+// 유니온 테이블에서 직업에 따라 클래스 리턴
+export const checkIsActiveUnionBlock = (posInfo: PosInfo[], cx: number, cy: number) => {
+    for(const {x, y, block_class} of posInfo){
+      // console.log(x, cy, y, cx, block_class)
+      if(x===(cy-11) && y+cx===10){ 
+        switch(block_class){
+          case '히어로':case '팔라딘':case '다크나이트':case '소울마스터':case '미하일':case '블래스터':case '데몬슬레이어':case '데몬어벤져':case '아란':case '카이저':case '아델':case '제로':
+            return 'active-cell active-warrior-cell';
+          case '보우마스터':case '신궁':case '패스파인더':case '윈드브레이커':case '와일드헌터':case '메르세데스':case '카인':
+            return 'active-cell active-archer-cell';
+          case '아크메이지(불,독)':case '아크메이지(썬,콜)':case '비숍':case '플레임위저드':case '배틀메이지':case '에반':case '루미너스':case '일리움':case '라라':case '키네시스':
+            return 'active-cell active-wizard-cell';
+          case '나이트로드':case '섀도어':case '듀얼블레이더':case '나이트워커':case '팬텀':case '카데나':case '칼리':case '호영':
+            return 'active-cell active-thief-cell';
+          case '바이퍼':case '캡틴':case '캐논마스터':case '스트라이커':case '메카닉':case '은월':case '엔젤릭버스터':case '아크':
+            return 'active-cell active-pirate-cell';
+          case '제논':
+            return 'active-cell active-hybrid-cell';
+          default: 
+            return 'active-cell';
+        }
+      }
+    }
+    return '';
+}
 
 // [2. 강화수치]
 // MAIN STAT
@@ -72,6 +104,8 @@ const additionalPlusScore: PlusScore = {
   "공격력 증가": [0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
   "주력 스탯 증가": [0, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
 };
+
+// HEXA스탯 수치 계산
 export const calcHexaPlusScore = (level: number, name: keyof PlusScore, status: "main" | "additional") => {
   if (status === "main") {
     const arr = mainPlusScore[name].slice(0, level + 1);

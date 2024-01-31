@@ -2,11 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import { LinkSkillInfo, getCharacterLinkSkill } from "../../api/skill";
 import LinkSkillInfoListItem from "./LinkSkillInfoListItem";
 import { CommonProps } from "../TabContent";
+import OpenButton from "../common/OpenButton";
 
 const LinkSkillInfoList = ({ ocid }: CommonProps) => {
   const [linkSkillInfo, setLinkSkillInfo] = useState<LinkSkillInfo>({} as LinkSkillInfo);
   const [isOpen, setIsOpen] = useState(false);
 
+  // ocid로 현재 사용중인 링크스킬목록 조회
   const getLinkSkillInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterLinkSkill(targetOcid);
@@ -33,9 +35,7 @@ const LinkSkillInfoList = ({ ocid }: CommonProps) => {
             <LinkSkillInfoListItem skill={skill} key={skill.skill_name}/>
           ))}
       </ul>
-      <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "접기" : "펼치기"}
-      </button>
+      <OpenButton list={linkSkillInfo.character_link_skill} isOpen={isOpen} handleIsOpen={setIsOpen}/>
     </div>
   );
 };

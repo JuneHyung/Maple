@@ -5,6 +5,7 @@ type SkillInfoListItemProps = {skill: CharacterSkill}
 const SkillInfoListItem = ({ skill }: SkillInfoListItemProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
   
+  // 화면에 표시된 이미지만 지연로딩
   useEffect(()=>{
     const callback: IntersectionObserverCallback = (entries, observer) => {
       entries.forEach(entry=>{

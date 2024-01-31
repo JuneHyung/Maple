@@ -2,11 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import { FinalStat, getCharacterStat } from "../../api/stat";
 import StatInfoListItem from "./StatInfoListItem";
 import { CommonProps } from "../TabContent";
+import OpenButton from "../common/OpenButton";
 
 const StatInfoList = ({ ocid }: CommonProps) => {
   const [statInfo, setStatInfo] = useState<FinalStat[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   
+  // ocid로 캐릭터의 스탯정보 조회
   const getStatInfo = useCallback(async (ocid: string) => {
     try {
       const result = await getCharacterStat(ocid);
@@ -29,7 +31,7 @@ const StatInfoList = ({ ocid }: CommonProps) => {
         <StatInfoListItem stat={stat} key={`${stat.stat_name}${stat.stat_value}`}/>
       ))}
     </ul>
-    <button className="open-button" onClick={()=>setIsOpen(!isOpen)}>{isOpen ? '접기' : '펼치기'}</button>
+    <OpenButton list={statInfo} isOpen={isOpen} handleIsOpen={setIsOpen}/>
     </div>
   );
 };

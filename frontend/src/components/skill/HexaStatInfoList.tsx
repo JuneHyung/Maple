@@ -8,7 +8,8 @@ const HexaStatInfoList = ({ ocid }: CommonProps) => {
   const [hexaStatInfoList, setHexaSkillInfoList] = useState<HexaStatInfo>(
     {} as HexaStatInfo
   );
-  // calcHexaPlusScore(stat.sub_stat_level_1, stat.sub_stat_name_1, "additional")
+  
+  // ocid로 hexa stat정보 조회
   const getHexaStat = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterHexaStat(targetOcid);

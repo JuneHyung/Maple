@@ -3,10 +3,13 @@ import { EquipmentInfo, getCharacterEquipment } from "../../api/equipment";
 import { divideGrade } from "../../api/util";
 import EquipmentListItem from "./EquipmentListItem";
 import { CommonProps } from "../TabContent";
+import OpenButton from "../common/OpenButton";
 
 const EquipmentInfoList = ({ ocid }: CommonProps) => {
   const [equipmentInfo, setEquipmentInfo] = useState<EquipmentInfo>({} as EquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
+
+  // ocid로 장비목록 조회.
   const getItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterEquipment(targetOcid);
@@ -19,6 +22,7 @@ const EquipmentInfoList = ({ ocid }: CommonProps) => {
 
   useEffect(() => {
     getItemEquipmentInfo(ocid);
+    setIsOpen(false);
   }, [getItemEquipmentInfo, ocid]);
 
   return (
@@ -31,9 +35,7 @@ const EquipmentInfoList = ({ ocid }: CommonProps) => {
             ))
           : null}
       </ul>
-      <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? "접기" : "펼치기"}
-      </button>
+      <OpenButton list={equipmentInfo.item_equipment} isOpen={isOpen} handleIsOpen={setIsOpen}/>
     </div>
   );
 };
