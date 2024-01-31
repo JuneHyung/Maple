@@ -19,7 +19,7 @@
       .app-title {
         font-size: 1.2rem;
         font-weight: 900;
-        color: rgb(218, 127, 153);
+        color: $pinkbean-point-color;
       }
       .logo-wrap {
         display: flex;
@@ -34,31 +34,31 @@
         display: flex;
         justify-content: center;
         border-radius: 5px;
-        border: 2px solid #da7f99;
+        border: 2px solid $pinkbean-point-color;
         .search-bar-input {
           width: 100%;
           height: 44px;
           background: none;
           padding: 8px;
           font-weight: 900;
-          color: #da7f99;
-          background-color: #f7f2f3;
+          color: $pinkbean-point-color;
+          background-color: $pinkbean-bg-color;
           border: none;
           &:focus {
             outline: none;
           }
         }
         .search-button {
-          background-color: #da7f99;
-          color: #943376;
+          background-color: $pinkbean-point-color;
+          color: $pinkbean-high-color;
           font-weight: 900;
           padding: 0.3rem;
           transition: all 0.4s;
           border: none;
           cursor: pointer;
           &:hover {
-            background-color: #fbc4c7;
-            color: #da7f99;
+            background-color: $pinkbean-low-color;
+            color: $pinkbean-point-color;
           }
         }
       }
@@ -71,8 +71,8 @@
 
         .tab-item {
           flex: 0 1 100px;
-          background-color: #f7f2f3;
-          color: #943376;
+          background-color: $pinkbean-bg-color;
+          color: $pinkbean-high-color;
           font-weight: 900;
           cursor: pointer;
           a {
@@ -83,8 +83,8 @@
             height: 100%;
           }
           &:nth-child(2n) {
-            border-left: 1px solid #943376;
-            border-right: 1px solid #943376;
+            border-left: 1px solid $pinkbean-high-color;
+            border-right: 1px solid $pinkbean-high-color;
           }
           &:first-child {
             border-left: none;
@@ -96,7 +96,7 @@
           }
         }
         .cur-active-item {
-          background-color: #fbc4c7;
+          background-color: $pinkbean-low-color;
           // color:#943376
         }
       }

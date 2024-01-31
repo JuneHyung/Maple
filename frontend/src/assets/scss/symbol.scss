@@ -16,11 +16,12 @@
       position: relative;
       cursor: pointer;
       &:hover {
-        background-color: rgba(218, 127, 153, 1);
+        background-color: $pinkbean-point-color;
       }
       .symbol-icon {
-        width:34px;
         display: flex;
+        overflow:hidden;
+        width:34px;
         justify-content: center;
         align-items: center;
         margin-right: 8px;

@@ -24,7 +24,7 @@
         &:hover .skill-detail {
           display: block;
         }
-        .skill-icon {
+        .skill-icon {          
           width:32px;
           text-align: center;
           margin-right: 4px;
@@ -34,6 +34,7 @@
         }
         .skill-introduce {
           .skill-name {
+            padding-top:4px;
             margin-bottom: 4px;
           }
           .skill-effect {
@@ -79,19 +80,16 @@
     align-items: center;
     .hexa-stat-level {
       width: 40px;
-      text-align: center;
+      text-align: left;
       padding: 4px;
       margin-right: 8px;
     }
-    .hexa-stat-info {
-      display: flex;
-      flex: 3;
-    }
     .hexa-stat-name {
       margin-right: 4px;
+      
     }
   }
   .main-stat-item {
-    background-color: #43437e;
+    background-color: $text-high-color;
   }
 }

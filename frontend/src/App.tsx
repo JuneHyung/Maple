@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import "./assets/scss/app.scss";
 import TabContent from "./components/TabContent";
 import { getData } from "./api";
@@ -42,7 +42,6 @@ const App = () => {
               <video className="logo-image" autoPlay loop preload="auto">
                 <source type="video/webm" src={require("./assets/images/pinkbean.webm")} />
               </video>
-              {/* <img src={} alt="PinkBean Logo"  /> */}
               <h1 className="app-title">
                 <Link to="/" onClick={resetStatus}>
                   완전 메짱이셔

@@ -3,8 +3,10 @@
   padding: 8px 0;
   .equipment-info {
     margin: 0 8px;
+    .cash-equipment-info-list{display: flex; min-width:230px !important;}
     .equipment-info-list {
       display: flex;
+      min-width:450px;
       flex-direction: column;
       height: 500px;
       overflow: hidden;
@@ -19,7 +21,7 @@
         transition: all 0.4s;
         cursor: pointer;
         &:hover {
-          background-color: rgba(218, 127, 153, 1);
+          background-color: $pinkbean-point-color;
         }
         &:first-child {
           margin-top: 0;
@@ -28,9 +30,10 @@
           display: flex;
           align-items: center;
           .equipment-icon {
-            width:34px;
             display: flex;
             justify-content: center;
+            width:38px;
+            overflow:hidden;
             min-width: 38px;
             img {
               display: block;

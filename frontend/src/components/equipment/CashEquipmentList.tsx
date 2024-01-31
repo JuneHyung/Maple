@@ -30,7 +30,7 @@ const CashEquipmentInfoList = ({ ocid }: CommonProps) => {
 
   return (
     <div className="equipment-info">
-      <ul className={`equipment-info-list ${isOpen && "isOpen"}`}>
+      <ul className={`equipment-info-list cash-equipment-info-list ${isOpen && "isOpen"}`}>
         <h1 className="info-title">CASH 장비</h1>
         {cashEquipmentInfo.cash_item_equipment_list !== undefined
           ? cashEquipmentInfo.cash_item_equipment_list.map((item) => (

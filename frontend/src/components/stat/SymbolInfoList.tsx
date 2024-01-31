@@ -25,7 +25,7 @@ const SymbolInfoList = ({ ocid }: CommonProps) => {
     <div className="symbol-info">
       <ul className={`symbol-info-list ${isOpen ? "isOpen" : ""}`}>
         <h1 className="info-title">심볼</h1>
-        {symbolInfo.symbol && symbolInfo.symbol.map((symbol) => <SymbolInfoListItem symbol={symbol} key={`${symbol.symbol_name}${symbol.symbol_force}`}/>)}
+        {symbolInfo.symbol && symbolInfo.symbol.map((symbol, idx) => <SymbolInfoListItem symbol={symbol} idx={idx} key={`${symbol.symbol_name}${symbol.symbol_force}`}/>)}
       </ul>
       <button className="open-button" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "접기" : "펼치기"}

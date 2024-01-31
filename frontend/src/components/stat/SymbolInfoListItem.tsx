@@ -1,13 +1,13 @@
 import { useEffect, useRef } from "react";
 import { Symbol } from "../../api/stat";
 
-type SymbolInfoListItemProps = {symbol: Symbol};
-const SymbolInfoListItem = ({ symbol }: SymbolInfoListItemProps) => {
+type SymbolInfoListItemProps = {symbol: Symbol, idx: number};
+const SymbolInfoListItem = ({ symbol, idx }: SymbolInfoListItemProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(()=>{
     const callback: IntersectionObserverCallback = (entries, observer) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, idx) => {
         if(entry.isIntersecting){
           const target = entry.target as HTMLImageElement;
           target.src = target.dataset.src as string;
