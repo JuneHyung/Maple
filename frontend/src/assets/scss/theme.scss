@@ -26,6 +26,13 @@ $pinkbean-low-color: #fbc4c7;
 $pinkbean-high-color: #943376;
 $pinkbean-bg-color: #f7f2f3;
 
+$artifact-color: #4897ae;
+$artifact-maxlv-color: #6056f2;
+$artifact-bg-color: linear-gradient(to bottom,#2c3035 40%, #4897ae 100%);
+$artifact-maxlv-bg-color: linear-gradient(to bottom,#2c3035 20%, #6056f2 100%);
+$artifact-border-color: #718c9a;
+$artifact-maxlv-border-color: #ddecfb;
+
 .rank-legend { color: $legend-color; }
 .rank-unique { color: $unique-color; }
 .rank-epic { color: $epic-color; }

@@ -32,6 +32,25 @@ export interface UnionRaiderInfo {
   union_inner_stat: UnionInnerStat[];
   union_block: UnionBlock[];
 }
+
+interface UnionArtifactEffect {
+  name: string,
+  level: number
+}
+interface UnionArtifactCrystal {
+  name: string,
+  validity_flag: string,
+  date_expire: string,
+  level: number,
+  crystal_option_name_1: string,
+  crystal_option_name_2: string,
+  crystal_option_name_3: string
+}
+export interface UnionArtifactInfo {
+  date: string;
+  union_artifact_effect: UnionArtifactEffect[];
+  union_artifact_crystal: UnionArtifactCrystal[];
+}
 // 유니온 정보 조회
 export const getCharacterUnion = async (ocid: string) => {
   const response = await getData<UnionInfo>(`${baseUrl}/union/basic`, {
@@ -43,6 +62,14 @@ export const getCharacterUnion = async (ocid: string) => {
 // 유니온 공격대 정보 조회
 export const getCharacterUnionRaider = async (ocid: string) => {
   const response = await getData<UnionRaiderInfo>(`${baseUrl}/union/raider`, {
+    params: { ocid, date: baseDay },
+  });
+  return response.result;
+};
+
+// 유니온 아티팩트 정보 조회
+export const getCharacterUnionArtifact = async (ocid: string) => {
+  const response = await getData<UnionArtifactInfo>(`${baseUrl}/union/artifact`, {
     params: { ocid, date: baseDay },
   });
   return response.result;

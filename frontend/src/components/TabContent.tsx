@@ -2,6 +2,7 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import NoData from "./NoData";
 import BasicInfoList from "./stat/BasicInfoList";
+import UnionArtifactPage from "../pages/UnionArtifactPage";
 
 interface PathInfo {
   label: string;
@@ -22,6 +23,7 @@ const statusList: TabStatus = [
   { label: "스킬", path: "skill" },
   { label: "장비", path: "equipment" },
   { label: "유니온", path: "union" },
+  { label: "아티팩트", path: "artifact"},
 ];
 export type TabContentProps = {
   ocid: string;
@@ -60,11 +62,12 @@ const TabContent = ({ ocid, handleOCID, setCharacterName }: TabContentProps) => 
 
           <Suspense fallback={<div>Loading....</div>}>
             <Routes>
-              <Route path="/" element={<RedirectPage path="/stat" />} />
+              <Route path="/" element={<RedirectPage path="/artifact" />} />
               <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
               <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
               <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />
               <Route path="/union" element={<UnionInfoPage ocid={ocid} />} />
+              <Route path="/artifact" element={<UnionArtifactPage ocid={ocid} />} />
               <Route path="*" element={<NoData />} />
             </Routes>
           </Suspense>
