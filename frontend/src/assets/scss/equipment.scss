@@ -32,7 +32,7 @@
           .equipment-icon {
             display: flex;
             justify-content: center;
-            width:38px;
+            min-width:38px;
             overflow:hidden;
             min-width: 38px;
             img {

@@ -27,7 +27,7 @@ const BasicInfoList = ({ ocid }: CommonProps) => {
       <div className="basic-info-content">
         <div className="basic-img-wrap">
           <div className="character-icon">
-            <img src={basicInfo.character_image} alt="chracter_image" />
+            <img src={basicInfo.character_image} alt="charc_img" />
           </div>
           <ul className="character-description">
             <li className="character-info-item">

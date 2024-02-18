@@ -62,7 +62,7 @@ const TabContent = ({ ocid, handleOCID, setCharacterName }: TabContentProps) => 
 
           <Suspense fallback={<div>Loading....</div>}>
             <Routes>
-              <Route path="/" element={<RedirectPage path="/artifact" />} />
+              <Route path="/" element={<RedirectPage path="/stat" />} />
               <Route path="/stat" element={<StatInfoPage ocid={ocid} />} />
               <Route path="/skill" element={<SkillInfoPage ocid={ocid} />} />
               <Route path="/equipment" element={<EquipmentInfoPage ocid={ocid} />} />

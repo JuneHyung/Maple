@@ -21,7 +21,7 @@
       .symbol-icon {
         display: flex;
         overflow:hidden;
-        width:34px;
+        min-width:34px;
         justify-content: center;
         align-items: center;
         margin-right: 8px;
