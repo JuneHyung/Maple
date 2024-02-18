@@ -4,6 +4,7 @@ import { CommonProps } from "../components/TabContent";
 import UnionArtifactCrystalList from "../components/artifact/UnionArtifactCrystalList";
 import UnionArtifactEffectList from "../components/artifact/UnionArtifactEffectList";
 import { UnionArtifactInfo, getCharacterUnionArtifact } from "../api/union";
+import PageMeta from "../components/PageMeta";
 
 const UnionArtifactPage = ({ocid}: CommonProps) => {
   const [artifactInfo, setArtifactInfo] = useState({} as UnionArtifactInfo);
@@ -25,6 +26,7 @@ const UnionArtifactPage = ({ocid}: CommonProps) => {
   }, [getUnionArtifactInfo, ocid]);
   return (
     <div className="union-artifact-container">
+      <PageMeta title="유니온 아티팩트 조회" desc="유니온 아티팩트 정보 조회"/>
       <UnionArtifactCrystalList list={artifactInfo.union_artifact_crystal} />
       <UnionArtifactEffectList list={artifactInfo.union_artifact_effect} />
     </div>

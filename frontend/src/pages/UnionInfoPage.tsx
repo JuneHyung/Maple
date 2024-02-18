@@ -3,6 +3,7 @@ import { UnionInfo, UnionRaiderInfo, getCharacterUnion, getCharacterUnionRaider 
 import UnionTable from "../components/union/UnionTable";
 import UnionInfoListContainer from "../components/union/UnionInfoContainer";
 import { CommonProps } from "../components/TabContent";
+import PageMeta from "../components/PageMeta";
 
 const UnionInfoPage = ({ ocid }: CommonProps) => {
   const [unionInfo, setUnionInfo] = useState({} as UnionInfo);
@@ -37,6 +38,7 @@ const UnionInfoPage = ({ ocid }: CommonProps) => {
 
   return (
     <div className="union-info-page">
+      <PageMeta title="유니온 정보 조회" desc="유니온, 유니온 공격대 정보 조회"/>
       <div className="union-info-list">
         <ul className="union-info-content">
           {unionInfo.hasOwnProperty("union_level") ? (

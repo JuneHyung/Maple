@@ -3,6 +3,8 @@ import "./assets/scss/app.scss";
 import TabContent from "./components/TabContent";
 import { getData } from "./api";
 import { BrowserRouter, Link } from "react-router-dom";
+import PageMeta from "./components/PageMeta";
+import { Helmet } from "react-helmet-async";
 
 interface OCIDResponse {
   ocid: string;
@@ -36,6 +38,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
+      <PageMeta title="완전 메짱이셔" desc="메이플스토리 캐릭터 정보 조회 서비스"/>
         <div className="content">
           <header className="app-header">
             <div className="logo-wrap">
