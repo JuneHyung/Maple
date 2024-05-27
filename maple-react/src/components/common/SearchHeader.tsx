@@ -2,13 +2,14 @@ import { getData } from '@/api';
 import { PathList } from '@/models/path';
 import { useUserStore } from '@/store/user';
 import { ChangeEvent, useCallback, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 interface OCIDResponse {
   ocid: string;
 }
 const SearchHeader = () => {
   const [characterName, setCharacterName] = useState('이깅우');
   const userStore = useUserStore();
+  const nav = useNavigate();
   // const pathList: PathList = [
   //   { path: '/', label: 'Open Page' },
   //   { path: '/page01', label: 'Page01' },
@@ -28,6 +29,7 @@ const SearchHeader = () => {
         });
         const { ocid } = response.result;
         userStore.setOcid(ocid);
+        nav('/detail/stat');
       } catch (e) {
         userStore.setOcid('');
       }

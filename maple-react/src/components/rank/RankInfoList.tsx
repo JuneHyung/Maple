@@ -4,10 +4,12 @@ import RankInfoListItem from "./RankInfoListItem";
 import { getRankOverall } from "@/api/rank";
 import { useRankStore } from "@/store/rank";
 import { RankInfo, Ranking } from "@/models/rank";
+import { useUserStore } from "@/store/user";
 
 const RankInfoList = () => {
   const [rankInfoList, setRankInfoList] = useState<RankInfo>([] as RankInfo);
-  const {selectedClass, } = useRankStore();
+  const {selectedClass } = useRankStore();
+  const {} = useUserStore();
   // 선택한 직업의 랭킹목록 조회.
   const getRankingInfoList = useCallback(async () => {
     try {

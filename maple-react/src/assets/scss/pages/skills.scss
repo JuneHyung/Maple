@@ -1,0 +1,95 @@
+.skill-info-page {
+  display: flex;
+  .skill-info {
+    margin: 0 8px;
+    &:first-child {
+      margin-left: 0;
+    }
+    .skill-info-list {
+      width: 300px;
+      height: 450px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      &:first-child {
+        margin-left: 0;
+      }
+      .skill-info-item {
+        display: flex;
+        position: relative;
+        margin: 4px 0;
+        padding: 8px;
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        &:hover .skill-detail {
+          display: block;
+        }
+        .skill-icon {          
+          min-width:32px;
+          text-align: center;
+          margin-right: 4px;
+          .skill-skill-level {
+            font-size: 0.8rem;
+          }
+        }
+        .skill-introduce {
+          .skill-name {
+            padding-top:4px;
+            margin-bottom: 4px;
+          }
+          .skill-effect {
+            font-size: 0.8rem;
+            color: $text-middle-color;
+            font-family: inherit;
+            white-space: pre-line;
+          }
+        }
+        .skill-detail {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 30%;
+          padding: 8px;
+          background: black;
+          z-index: 9999;
+          width: auto;
+          .skill-description {
+            border: none;
+            width: 100%;
+            font-size: 0.8rem;
+            color: $text-middle-color;
+            font-family: inherit;
+            white-space: pre-line;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hexa-stat-list {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 4px;
+  .hexa-stat-item {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    margin: 4px 0;
+    display: flex;
+    align-items: center;
+    .hexa-stat-level {
+      width: 40px;
+      text-align: left;
+      padding: 4px;
+      margin-right: 8px;
+    }
+    .hexa-stat-name {
+      margin-right: 4px;
+      
+    }
+  }
+  .main-stat-item {
+    background-color: $text-high-color;
+  }
+}

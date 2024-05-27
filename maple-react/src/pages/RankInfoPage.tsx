@@ -1,6 +1,6 @@
 
-import RankInfoList from '@/assets/scss/components/rank/RankInfoList';
 import CharacterTypeList from '@/components/rank/CharacterTypeList';
+import RankInfoList from '@/components/rank/RankInfoList';
 
 const RankInfoPage = () => {
   return (
