@@ -10,11 +10,6 @@ const SearchHeader = () => {
   const [characterName, setCharacterName] = useState('이깅우');
   const userStore = useUserStore();
   const nav = useNavigate();
-  // const pathList: PathList = [
-  //   { path: '/', label: 'Open Page' },
-  //   { path: '/page01', label: 'Page01' },
-  //   { path: '/page02', label: 'Page02' },
-  // ];
 
   const handleOnChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setCharacterName(e.target.value);
@@ -29,7 +24,7 @@ const SearchHeader = () => {
         });
         const { ocid } = response.result;
         userStore.setOcid(ocid);
-        nav('/detail/stat');
+        nav(`/user/${characterName}/stat`);
       } catch (e) {
         userStore.setOcid('');
       }
@@ -44,7 +39,7 @@ const SearchHeader = () => {
     <header className="app-header">
       <div className="logo-wrap">
         <video className="logo-image" autoPlay loop preload="auto">
-          <source type="video/webm" src={"@/assets/images/pinkbean.webm"} />
+          <source type="video/webm" src={"src/assets/images/pinkbean.webm"} />
         </video>
         <h1 className="app-title">
           <Link to="/" onClick={resetStatus}>

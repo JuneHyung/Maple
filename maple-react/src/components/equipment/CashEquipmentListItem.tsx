@@ -1,5 +1,5 @@
+import { CashItemEquipment } from "@/models/equipment";
 import { useEffect, useRef } from "react";
-import { CashItemEquipment } from "../../api/equipment";
 
 type CashEquipmentListItemProps = {item: CashItemEquipment};
 const CashEquipmentListItem = ({ item }: CashEquipmentListItemProps) => {

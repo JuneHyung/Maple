@@ -1,4 +1,4 @@
-import { HyperStatPreset } from "../../api/stat";
+import { HyperStatPreset } from "@/models/stat";
 
 type HyperStatInfoListItemProps = {stat: HyperStatPreset, idx: number};
 const HyperStatInfoListItem = ({ stat, idx }: HyperStatInfoListItemProps) => {

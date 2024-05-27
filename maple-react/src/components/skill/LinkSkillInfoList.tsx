@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { LinkSkillInfo, getCharacterLinkSkill } from "../../api/skill";
+import { getCharacterLinkSkill } from "../../api/skill";
 import LinkSkillInfoListItem from "./LinkSkillInfoListItem";
 import OpenButton from "../common/OpenButton";
 import { useUserStore } from "@/store/user";
+import { LinkSkillInfo } from "@/models/skill";
 
 const LinkSkillInfoList = () => {
   const {ocid} = useUserStore();

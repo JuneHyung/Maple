@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { CashEquipmentInfo, getCharacterCashEquipment } from "../../api/equipment";
+import { getCharacterCashEquipment } from "../../api/equipment";
 import CashEquipmentListItem from "./CashEquipmentListItem";
 import OpenButton from "../common/OpenButton";
 import { useUserStore } from "@/store/user";
+import { CashEquipmentInfo } from "@/models/equipment";
 
 const CashEquipmentInfoList = () => {
   const {ocid} = useUserStore();

@@ -1,4 +1,4 @@
-import { CharacterHexaStatCore } from "../../api/skill";
+import { CharacterHexaStatCore } from "@/models/skill";
 
 type HexaStatInfoListItemProps = {stat: CharacterHexaStatCore, score: string}
 const HexaStatInfoListItem = ({stat, score}: HexaStatInfoListItemProps) => {

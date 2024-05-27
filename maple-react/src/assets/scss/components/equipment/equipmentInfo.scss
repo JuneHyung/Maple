@@ -1,0 +1,57 @@
+.equipment-info-page {
+  display: flex;
+  padding: 8px 0;
+  .equipment-info {
+    margin: 0 8px;
+    .cash-equipment-info-list{display: flex; min-width:230px !important;}
+    .equipment-info-list {
+      display: flex;
+      min-width:450px;
+      flex-direction: column;
+      height: 500px;
+      overflow: hidden;
+      .equipment-info-item {
+        display: flex;
+        margin: 4px 0;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        padding: 8px;
+        transition: all 0.4s;
+        cursor: pointer;
+        &:hover {
+          background-color: $pinkbean-point-color;
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+        .equipment-img-wrap {
+          display: flex;
+          align-items: center;
+          .equipment-icon {
+            display: flex;
+            justify-content: center;
+            min-width:38px;
+            overflow:hidden;
+            min-width: 38px;
+            img {
+              display: block;
+            }
+          }
+          .equipment-description {
+            display: flex;
+            flex-direction: column;
+            margin-left: 8px;
+            p {
+              margin: 4px;
+            }
+          }
+        }
+        .item-potential-option-list {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}

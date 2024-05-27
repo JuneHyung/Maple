@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { HexaStatInfo, getCharacterHexaStat } from "@/api/skill";
+import { getCharacterHexaStat } from "@/api/skill";
 import { calcHexaPlusScore } from "@/api/util";
 import HexaStatInfoListItem from "./HexaStatInfoListItem";
 import { useUserStore } from "@/store/user";
+import { HexaStatInfo } from "@/models/skill";
 
 const HexaStatInfoList = () => {
   const {ocid} = useUserStore();

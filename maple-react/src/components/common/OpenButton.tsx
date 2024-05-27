@@ -1,6 +1,6 @@
-import { CashItemEquipment, ItemEquipment } from "../../api/equipment";
-import { CharacterLinkSkill, CharacterSkill,  } from "../../api/skill";
-import { FinalStat, Symbol } from "../../api/stat";
+import { CashItemEquipment, ItemEquipment } from "@/models/equipment";
+import { CharacterLinkSkill, CharacterSkill } from "@/models/skill";
+import { FinalStat, Symbol } from "@/models/stat";
 
 type OpenButtonProps = {
   list: CashItemEquipment[] | ItemEquipment | CharacterLinkSkill[] | CharacterSkill[] | FinalStat[] | Symbol[],

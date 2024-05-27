@@ -1,9 +1,10 @@
 @import "./theme.scss";
 @import "./reset.scss";
+@import "./font.scss";
 @import "./app.scss";
 body {
   margin: 0;
-  font-family: "pretendard,'맑은 고딕','Malgun Gothic',돋움,Dotum,'Apple SD Gothic Neo',sans-serif";
+  font-family: "MaplestoryOTFBold", "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size:14px;

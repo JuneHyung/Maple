@@ -1,0 +1,35 @@
+.basic-info-list {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
+  .basic-info-content {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    .basic-img-wrap {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.25rem;
+      .character-icon {
+        min-width:96px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .character-description {
+        display: flex;
+        flex-direction: column;
+        .character-info-item {
+          margin: 2px;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

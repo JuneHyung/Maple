@@ -1,0 +1,39 @@
+.link-info {
+  margin: 0 0 0 8px;
+  .link-info-list {
+    width: 300px;
+    height: 450px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .link-info-item {
+      display: flex;
+      align-items: center;
+      margin: 4px 0;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.2);
+      &:hover {
+        background-color: $pinkbean-point-color;
+      }
+      cursor: pointer;
+      .link-icon {
+        display: flex;
+        justify-content: center;
+        // overflow:hidden;
+        min-width:32px;
+        align-items: center;
+        margin-right: 8px;
+      }
+      .link-skill-level {
+        margin-left: 4px;
+      }
+      .link-skill-effect {
+        font-size: 0.8rem;
+        color: $text-middle-color;
+        margin-top: 4px;
+      }
+    }
+  }
+}

@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
-import { EquipmentInfo, getCharacterEquipment } from "../../api/equipment";
+import { getCharacterEquipment } from "../../api/equipment";
 import { divideGrade } from "../../api/util";
 import EquipmentListItem from "./EquipmentListItem";
 import OpenButton from "../common/OpenButton";
 import { useUserStore } from "@/store/user";
+import { EquipmentInfo } from "@/models/equipment";
 
 const EquipmentInfoList = () => {
   const {ocid} = useUserStore();

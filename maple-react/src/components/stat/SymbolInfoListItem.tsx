@@ -1,5 +1,5 @@
+import { Symbol } from "@/models/stat";
 import { useEffect, useRef } from "react";
-import { Symbol } from "../../api/stat";
 
 type SymbolInfoListItemProps = {symbol: Symbol, idx: number};
 const SymbolInfoListItem = ({ symbol, idx }: SymbolInfoListItemProps) => {

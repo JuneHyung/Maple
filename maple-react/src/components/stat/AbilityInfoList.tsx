@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { useUserStore } from "@/store/user";
-import { AbilityInfoItem, getCharacterAbility } from "@/api/stat";
+import { getCharacterAbility } from "@/api/stat";
 import { divideGrade } from "@/api/util";
 import AbilityInfoListItem from "./AbilityInfoListItem";
+import { AbilityInfoItem } from "@/models/stat";
 
 const AbilityInfoList = () => {
   const {ocid} = useUserStore();

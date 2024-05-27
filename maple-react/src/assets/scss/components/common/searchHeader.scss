@@ -1,20 +1,48 @@
-.nav-header{
-  display:flex;
-  flex:1;
-  a{
-    display:flex;
-    flex:1;
+.app-header {
+  .logo-wrap {
+    display: flex;
     justify-content: center;
     align-items: center;
-    border:none;
-    outline:none;
-    color:inherit;
-    font-weight:900;
-    cursor: pointer;
-    transition: all 0.4s;
-    &:hover{
-      background-color:rgba(255,255,255,1);
-      color:#fff;
+    height: 60px;
+    .logo-image {
+      height: 100%;
+    }
+    .app-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: $pinkbean-point-color;
+    }
+  }
+  .search-bar-wrap {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: 2px solid $pinkbean-point-color;
+    .search-bar-input {
+      width: 100%;
+      height: 44px;
+      background: none;
+      padding: 8px;
+      font-weight: 900;
+      color: $pinkbean-point-color;
+      background-color: $pinkbean-bg-color;
+      border: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    .search-button {
+      background-color: $pinkbean-point-color;
+      color: $pinkbean-high-color;
+      font-weight: 900;
+      padding: 0.3rem;
+      transition: all 0.4s;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        background-color: $pinkbean-low-color;
+        color: $pinkbean-point-color;
+      }
     }
   }
 }

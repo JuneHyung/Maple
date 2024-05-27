@@ -1,6 +1,12 @@
 @import "./components/common/searchHeader.scss";
+@import "./components/common/tab.scss";
+
+@import "./pages/artifact.scss";
+@import "./pages/equipment.scss";
 @import "./pages/rank.scss";
 @import "./pages/skills.scss";
+@import "./pages/stat.scss";
+@import "./pages/union.scss";
 .app{
   background: $background-color;
   display:flex; 
@@ -9,4 +15,25 @@
   padding:1rem;
   color: #fff;
 
+  .isOpen {
+    height: auto !important;
+    overflow: unset !important;
+  }
+  .open-button {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 0 0 20px 20px;
+    color: $pinkbean-point-color;
+    cursor: pointer;
+    border-top: 2px solid $pinkbean-low-color;
+    background-color: rgba(218, 127, 153, 0.2);
+    transition: all 0.2s;
+
+    &:hover {
+      color: $pinkbean-high-color;
+      background-color: rgba(218, 127, 153, 1);
+    }
+  }
 }

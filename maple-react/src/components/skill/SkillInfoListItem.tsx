@@ -1,5 +1,5 @@
+import { CharacterSkill } from "@/models/skill";
 import { useEffect, useRef } from "react";
-import { CharacterSkill } from "../../api/skill";
 
 type SkillInfoListItemProps = {skill: CharacterSkill}
 const SkillInfoListItem = ({ skill }: SkillInfoListItemProps) => {

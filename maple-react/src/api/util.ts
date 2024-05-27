@@ -1,13 +1,11 @@
-import { CharacterType } from "@/models/classType";
-// import { PosInfo } from "../components/union/UnionTable";
+import { CharacterType } from "@/models/characterType";
+import { PosInfo } from "@/models/union";
+import { Grade, PlusScore } from "@/models/util";
 
 export const divideNumberComma = (num: number) => {
   if (num) return Number(num).toLocaleString("ko-KR");
   return null;
 };
-
-export type Grade = "레전드리" | "에픽" | "유니크" | "레어";
-export type GradeClass = "rank-legend" | "rank-epic" | "rank-unique" | "rank-rare";
 
 // 등급에 따라 클래스 리턴
 export const divideGrade = (grade: Grade) => {
@@ -79,14 +77,7 @@ export const checkIsActiveUnionBlock = (posInfo: PosInfo[], cx: number, cy: numb
 
 // ADDITIONAL STAT : 레벨당 증가량 동일.
 // 크뎀 : +0.35% 보공,방무 : +1.00%  데미지 : +0.75%  공격력 : +5 주스텟 : +100
-export interface PlusScore {
-  "크리티컬 데미지 증가": number[];
-  "보스 데미지 증가": number[];
-  "방어율 무시": number[];
-  "데미지 증가": number[];
-  "공격력 증가": number[];
-  "주력 스탯 증가": number[];
-}
+
 const mainPlusScore: PlusScore = {
   "크리티컬 데미지 증가": [0, 0.35, 0.35, 0.35, 0.35, 0.7, 0.7, 0.7, 1.05, 1.05, 1.4],
   "보스 데미지 증가": [0, 1.0, 1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 3.0, 3.0, 4.0],

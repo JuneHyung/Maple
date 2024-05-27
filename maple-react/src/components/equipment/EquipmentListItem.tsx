@@ -1,6 +1,6 @@
+import { PotentialEquipment } from "@/models/equipment";
+import { GradeClass } from "@/models/util";
 import { useEffect, useRef } from "react";
-import { PotentialEquipment } from "../../api/equipment";
-import { GradeClass } from "../../api/util";
 
 type EquipmentlistItemProps = {item: PotentialEquipment, grade: GradeClass}
 

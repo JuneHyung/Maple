@@ -1,0 +1,47 @@
+
+.union-table-wrap {
+  max-width: 530px;
+  height: 500px;
+  border: 1px solid #fff;
+  margin: 12px 0;
+  .union-table {
+    background: $union-table-bg-color;
+    .row {
+      display: flex;
+      .cell {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        width: 24px;
+        height: 24px;
+        border: 1px solid $union-table-border-color;
+        padding: 0.5rem;
+        color: #dbdbdb;
+      }
+      .active-warrior-cell {
+        background-color: $warrior-color !important;
+      }
+      .active-archer-cell {
+        background-color: $archer-color !important;
+      }
+      .active-wizard-cell {
+        background-color: $wizard-color !important;
+      }
+      .active-thief-cell {
+        background-color: $thief-color !important;
+      }
+      .active-pirate-cell {
+        background-color: $pirate-color !important;
+      }
+      .active-hybrid-cell {
+        background: $hybrid-color;
+      }
+      .active-cell {
+        box-sizing: border-box;
+        background-color: $union-table-active-color;
+      }
+    }
+  }
+}

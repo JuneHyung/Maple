@@ -1,12 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
-import { FinalStat, getCharacterStat } from "@/api/stat";
-import StatInfoListItem from "./StatInfoListItem";
+import { useCallback, useEffect, useState } from 'react';
+import { getCharacterStat } from '@/api/stat';
+import StatInfoListItem from './StatInfoListItem';
 
-import OpenButton from "../common/OpenButton";
-import { useUserStore } from "@/store/user";
+import OpenButton from '../common/OpenButton';
+import { useUserStore } from '@/store/user';
+import { FinalStat } from '@/models/stat';
 
 const StatInfoList = () => {
-  const {ocid} = useUserStore();
+  const { ocid } = useUserStore();
   const [statInfo, setStatInfo] = useState<FinalStat[]>([]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,13 +28,13 @@ const StatInfoList = () => {
 
   return (
     <div className="stat-info">
-    <ul className={`stat-info-list ${isOpen ? 'isOpen' : ''}`}>
-      <h1 className="info-title">스탯</h1>
-      {statInfo.map((stat) => (
-        <StatInfoListItem stat={stat} key={`${stat.stat_name}${stat.stat_value}`}/>
-      ))}
-    </ul>
-    <OpenButton list={statInfo} isOpen={isOpen} handleIsOpen={setIsOpen}/>
+      <ul className={`stat-info-list ${isOpen ? 'isOpen' : ''}`}>
+        <h1 className="info-title">스탯</h1>
+        {statInfo.map((stat) => (
+          <StatInfoListItem stat={stat} key={`${stat.stat_name}${stat.stat_value}`} />
+        ))}
+      </ul>
+      <OpenButton list={statInfo} isOpen={isOpen} handleIsOpen={setIsOpen} />
     </div>
   );
 };

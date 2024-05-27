@@ -1,0 +1,65 @@
+.union-info-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-sizing: border-box;
+  &:nth-child(2) {
+    margin: 0 16px;
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+  .union-info-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    .union-info-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 4px 0;
+      color: $text-middle-color;
+      .union-block-type {
+        display: flex;
+        flex: 2;
+        margin-right: 4px;
+      }
+      .union-block-class {
+        display: flex;
+        flex: 2;
+        color: $text-low-color;
+      }
+      .union-block-level {
+        display: flex;
+        flex: 1;
+      }
+      .union-info-name {
+        color: $text-low-color;
+      }
+      .union-info-value {
+        color: #fff;
+      }
+
+      .warrior-block {
+        color: $warrior-color;
+      }
+      .archer-block {
+        color: $archer-color;
+      }
+      .wizard-block {
+        color: $wizard-color;
+      }
+      .thief-block {
+        color: $thief-color;
+      }
+      .pirate-block {
+        color: $pirate-color;
+      }
+      .other-block {
+        color: $maple-point-color;
+      }
+    }
+  }
+}

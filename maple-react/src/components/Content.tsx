@@ -12,7 +12,7 @@ const Content = () => {
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={<RankInfoPage />}></Route>
-            <Route path="/detail/*" element={<TabContent/>}></Route>
+            <Route path="/user/:characterName/*" element={<TabContent/>}></Route>
           </Routes>
         </Suspense>
       </BrowserRouter>

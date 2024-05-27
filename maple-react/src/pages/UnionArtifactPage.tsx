@@ -2,8 +2,9 @@
 import { useCallback, useEffect, useState } from "react";
 import UnionArtifactCrystalList from "@/components/artifact/UnionArtifactCrystalList";
 import UnionArtifactEffectList from "@/components/artifact/UnionArtifactEffectList";
-import { UnionArtifactInfo, getCharacterUnionArtifact } from "../api/union";
+import { getCharacterUnionArtifact } from "@/api/union";
 import { useUserStore } from "@/store/user";
+import { UnionArtifactInfo } from "@/models/union";
 
 const UnionArtifactPage = () => {
   const {ocid} = useUserStore();

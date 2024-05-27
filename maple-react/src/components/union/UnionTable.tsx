@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { CellPosBlock, UnionBlock, UnionRaiderInfo } from "../../api/union";
 import { checkIsActiveUnionBlock } from "../../api/util";
-type UnionTableProps ={info: UnionRaiderInfo};
-export type PosInfo = CellPosBlock & {block_class: string};
+import { CellPosBlock, PosInfo, UnionBlock, UnionRaiderInfo } from "@/models/union";
 
+type UnionTableProps ={info: UnionRaiderInfo};
 const UnionTable =({info}: UnionTableProps) => {
   const [posInfo, setPosInfo] = useState([] as PosInfo[]);
   const arr = Array.from({length: 20},(_,i)=>Array.from({length: 22},(_,j)=>i*22+j))
@@ -11,7 +10,7 @@ const UnionTable =({info}: UnionTableProps) => {
   useEffect(()=>{
     if(info.union_block){
       const flatted = info.union_block.map((block: UnionBlock)=>{ 
-        return block.block_position.map((pos:CellPosBlock) => {
+        return block.block_position.map((pos: CellPosBlock) => {
             return {x: pos.x, y: pos.y, block_class: block.block_class}
           })
       }).flat();

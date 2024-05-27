@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { UnionInfo, UnionRaiderInfo, getCharacterUnion, getCharacterUnionRaider } from "../api/union";
+import { getCharacterUnion, getCharacterUnionRaider } from "../api/union";
 import UnionTable from "../components/union/UnionTable";
 import UnionInfoListContainer from "../components/union/UnionInfoContainer";
 import { useUserStore } from "@/store/user";
+import { UnionInfo, UnionRaiderInfo } from "@/models/union";
 
 const UnionInfoPage = () => {
   const {ocid} = useUserStore();

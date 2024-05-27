@@ -1,4 +1,4 @@
-import { FinalStat } from "../../api/stat";
+import { FinalStat } from "@/models/stat";
 
 type StatInfoListItemProps = {stat: FinalStat};
 const StatInfoListItem = ({ stat }: StatInfoListItemProps) => {

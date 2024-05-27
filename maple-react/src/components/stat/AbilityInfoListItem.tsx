@@ -1,5 +1,5 @@
-import { AbilityInfoItem } from "../../api/stat";
-import { GradeClass } from "../../api/util";
+import { AbilityInfoItem } from "@/models/stat";
+import { GradeClass } from "@/models/util";
 
 type AbilityInfoListItemProps = {ability: AbilityInfoItem, grade: GradeClass}
 const AbilityInfoListItem = ({ ability, grade }: AbilityInfoListItemProps) => {

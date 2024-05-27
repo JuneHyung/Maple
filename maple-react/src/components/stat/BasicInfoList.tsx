@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import { BasicInfo, getCharacterBasic } from "../../api/stat";
-import { divideNumberComma } from "../../api/util";
+import { getCharacterBasic } from "@/api/stat";
+import { divideNumberComma } from "@/api/util";
 import { useUserStore } from "@/store/user";
+import { BasicInfo } from "@/models/stat";
 
 const BasicInfoList = () => {
   const {ocid} = useUserStore();

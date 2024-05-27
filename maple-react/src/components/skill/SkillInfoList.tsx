@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { SkillInfo, getCharacterSkills } from "../../api/skill";
+import { getCharacterSkills } from "../../api/skill";
 import SkillInfoListItem from "./SkillInfoListItem";
 import OpenButton from "../common/OpenButton";
 import { useUserStore } from "@/store/user";
+import { SkillInfo } from "@/models/skill";
 
 type SkillInfoListProps = {grade: 5 | 6 | 'hyperpassive'}
 
