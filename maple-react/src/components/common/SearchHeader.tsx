@@ -1,13 +1,10 @@
-import { getData } from '@/api';
-import { PathList } from '@/models/path';
+import { getOcidByCharacterName } from '@/api/user';
 import { useUserStore } from '@/store/user';
 import { ChangeEvent, useCallback, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-interface OCIDResponse {
-  ocid: string;
-}
+
 const SearchHeader = () => {
-  const [characterName, setCharacterName] = useState('이깅우');
+  const [characterName, setCharacterName] = useState('');
   const userStore = useUserStore();
   const nav = useNavigate();
 
@@ -16,13 +13,9 @@ const SearchHeader = () => {
   }, []);
 
   const handleOnClick = useCallback(async (character_name: string) => {
-    const baseUrl = import.meta.env.VITE_BACKEND_URL;
     if (character_name) {
       try {
-        const response = await getData<OCIDResponse>(`${baseUrl}/user/ocid`, {
-          params: { characterName: character_name },
-        });
-        const { ocid } = response.result;
+        const {ocid} = await getOcidByCharacterName(character_name);
         userStore.setOcid(ocid);
         nav(`/user/${characterName}/stat`);
       } catch (e) {

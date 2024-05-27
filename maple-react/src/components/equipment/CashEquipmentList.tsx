@@ -23,7 +23,9 @@ const CashEquipmentInfoList = () => {
 
   // ocid가 바뀌면 재조회.
   useEffect(() => {
-    getCashItemEquipmentInfo(ocid);
+    if(ocid){
+      getCashItemEquipmentInfo(ocid);
+    }
     setIsOpen(false);
   }, [getCashItemEquipmentInfo, ocid]);
 

@@ -27,7 +27,9 @@ const SkillInfoList = ({ grade }: SkillInfoListProps) => {
   );
 
   useEffect(() => {
-    getCharacterSkillsByGrade(ocid);
+    if(ocid){
+      getCharacterSkillsByGrade(ocid);
+    }
   }, [getCharacterSkillsByGrade, ocid]);
 
   return (

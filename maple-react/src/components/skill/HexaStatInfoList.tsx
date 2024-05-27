@@ -23,7 +23,9 @@ const HexaStatInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getHexaStat(ocid);
+    if(ocid){
+      getHexaStat(ocid);
+    }
   }, [getHexaStat, ocid]);
   
   return (
