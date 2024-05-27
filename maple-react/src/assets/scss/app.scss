@@ -1,0 +1,11 @@
+@import "./components/common/searchHeader.scss";
+@import "./pages/rank.scss";
+.app{
+  background: $background-color;
+  display:flex; 
+  flex-direction: column;
+  min-height: 100dvh;
+  padding:1rem;
+  color: #fff;
+
+}

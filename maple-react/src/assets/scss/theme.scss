@@ -1,0 +1,65 @@
+$background-color: #282c34;
+$maple-point-color: #f68500;
+$legend-color: #5cb85c;
+$unique-color: #f6a730;
+$epic-color: #6d62a1;
+$rare-color: #5393ca;
+$star-force-color: #f6a730;
+$star-force-bg-color: rgba(255, 248, 232, 0.3);
+$highlight-color: #ff5e78;
+$text-low-color: #9197b1;
+$text-middle-color: #848999;
+$text-high-color: #43437e;
+
+$warrior-color: #c62a5b;
+$archer-color: #8faf44;
+$wizard-color: #2e97ad;
+$thief-color: #9a65aa;
+$pirate-color: #bbbabb;
+$hybrid-color: linear-gradient(#bbbabb 0%, #9a65aa 100%);
+
+$union-table-border-color: rgba(255, 248, 232, 0.1);
+$union-table-bg-color: linear-gradient(#4c4f5d 0%, #27282e 100%);
+$union-table-active-color: #d2b799;
+
+$pinkbean-point-color: #da7f99;
+$pinkbean-low-color: #fbc4c7;
+$pinkbean-high-color: #943376;
+$pinkbean-bg-color: #f7f2f3;
+
+$artifact-color: #4897ae;
+$artifact-maxlv-color: #6056f2;
+$artifact-bg-color: linear-gradient(to bottom,#2c3035 40%, #4897ae 100%);
+$artifact-maxlv-bg-color: linear-gradient(to bottom,#2c3035 20%, #6056f2 100%);
+$artifact-border-color: #718c9a;
+$artifact-maxlv-border-color: #ddecfb;
+
+.rank-legend { color: $legend-color; }
+.rank-unique { color: $unique-color; }
+.rank-epic { color: $epic-color; }
+.rank-rare { color: $rare-color; }
+
+* {
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+    border-radius: 1.25rem;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 1.25rem;
+    width: 0.4rem;
+    background-color: $star-force-bg-color;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 1.25rem;
+    width: 0.4rem;
+    background-color: $pinkbean-point-color;
+  }
+}
+
+.info-title {
+  font-size: 1.5rem;
+  color: $pinkbean-point-color;
+  border-bottom: 3px solid $pinkbean-low-color;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+}
