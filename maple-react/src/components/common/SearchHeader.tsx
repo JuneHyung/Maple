@@ -17,7 +17,7 @@ const SearchHeader = () => {
       try {
         const {ocid} = await getOcidByCharacterName(character_name);
         userStore.setOcid(ocid);
-        nav(`/user/${characterName}/stat`);
+        nav(`/user/${characterName}/stat`, { replace: true });
       } catch (e) {
         userStore.setOcid('');
       }
@@ -31,9 +31,7 @@ const SearchHeader = () => {
   return (
     <header className="app-header">
       <div className="logo-wrap">
-        <video className="logo-image" autoPlay loop preload="auto">
-          <source type="video/webm" src={"src/assets/images/pinkbean.webm"} />
-        </video>
+        <div className="logo-image" />
         <h1 className="app-title">
           <Link to="/" onClick={resetStatus}>
             완전 메짱이셔

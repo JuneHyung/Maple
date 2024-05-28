@@ -23,7 +23,7 @@ const EquipmentInfoList = () => {
   }, []);
 
   useEffect(() => {
-    if(ocid){
+    if(ocid.length>0){
       getItemEquipmentInfo(ocid);
     }
     setIsOpen(false);

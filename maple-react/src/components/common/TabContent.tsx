@@ -1,7 +1,6 @@
 import { Routes, Route, Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { lazy, useCallback, useEffect } from 'react';
 
-
 import { useUserStore } from '@/store/user';
 import { getOcidByCharacterName } from '@/api/user';
 import BasicInfoList from '@/components/stat/BasicInfoList';
@@ -27,11 +26,11 @@ const TabContent = () => {
   const nav = useNavigate();
 
   const initOcid = useCallback(async ()=>{
-    if(characterName && isEmptyOcid()){
+    if(characterName!==undefined && characterName.length>0 && isEmptyOcid()){
       try {
         const { ocid } = await getOcidByCharacterName(characterName);
         setOcid(ocid);
-        nav(location.join('/'));
+        nav(location.join('/'), { replace: true });
       } catch (e) {
         setOcid('');
       }

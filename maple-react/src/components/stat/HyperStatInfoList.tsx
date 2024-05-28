@@ -34,7 +34,7 @@ const HyperStatInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getHyperStatInfo(ocid);
+    if(ocid.length>0) getHyperStatInfo(ocid);
   }, [getHyperStatInfo, ocid]);
 
   return (

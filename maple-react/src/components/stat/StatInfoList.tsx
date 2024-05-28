@@ -22,7 +22,7 @@ const StatInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getStatInfo(ocid);
+    if(ocid.length>0) getStatInfo(ocid);
   }, [getStatInfo, ocid]);
 
   return (

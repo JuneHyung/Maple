@@ -22,7 +22,7 @@ const SymbolInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getSymbolInfo(ocid);
+    if(ocid.length>0) getSymbolInfo(ocid);
   }, [getSymbolInfo, ocid]);
   
   return (

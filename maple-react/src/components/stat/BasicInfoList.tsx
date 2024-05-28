@@ -20,7 +20,7 @@ const BasicInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getBasicInfo(ocid);
+    if(ocid.length>0) getBasicInfo(ocid);
   }, [getBasicInfo, ocid]);
 
   return (

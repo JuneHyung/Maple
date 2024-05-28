@@ -37,7 +37,7 @@ const RankInfoList = () => {
     try {
       const { ocid } = await getOcidByCharacterName(character.character_name);
       setOcid(ocid);
-      nav(`/user/${character.character_name}/stat`);
+      nav(`/user/${character.character_name}/stat`, { replace: true });
     } catch (e) {
       setOcid('');
     }

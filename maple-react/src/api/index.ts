@@ -4,6 +4,8 @@ export const api: Axios = axios.create({
   baseURL: "http://localhost:3001",
   headers: {
     "Content-Type": "application/json",
+    "Content-Encoding": "gzip",
+    "Cache-Control": "max-age=31536000",
     "Access-Control-Allow-Origin": "*",
   },
 });

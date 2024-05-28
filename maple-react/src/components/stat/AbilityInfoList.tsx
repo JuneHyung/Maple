@@ -21,7 +21,7 @@ const AbilityInfoList = () => {
   }, []);
 
   useEffect(() => {
-    getAbilityInfo(ocid);
+    if(ocid.length>0) getAbilityInfo(ocid);
   }, [getAbilityInfo, ocid]);
 
   return (

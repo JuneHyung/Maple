@@ -22,7 +22,7 @@ const LinkSkillInfoList = () => {
   }, []);
 
   useEffect(() => {
-    if(ocid){
+    if(ocid.length>0){
       getLinkSkillInfo(ocid);
     }
   }, [getLinkSkillInfo, ocid]);

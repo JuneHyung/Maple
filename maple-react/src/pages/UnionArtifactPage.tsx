@@ -23,7 +23,7 @@ const UnionArtifactPage = () => {
 
 
   useEffect(() => {
-    getUnionArtifactInfo(ocid);
+    if(ocid.length>0) getUnionArtifactInfo(ocid);
   }, [getUnionArtifactInfo, ocid]);
   return (
     <div className="union-artifact-container">

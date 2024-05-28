@@ -33,8 +33,10 @@ const UnionInfoPage = () => {
   }, []);
 
   useEffect(() => {
-    getUnionInfo(ocid);
-    getUnionRaiderInfo(ocid);
+    if(ocid.length>0){
+      getUnionInfo(ocid);
+      getUnionRaiderInfo(ocid);
+    }
   }, [getUnionInfo, getUnionRaiderInfo, ocid]);
 
   return (
