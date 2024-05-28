@@ -7,13 +7,19 @@ import SymbolInfoList from "@/components/stat/SymbolInfoList";
 const StatInfoPage = () => {
   return (
     <div className="stat-info-page">
-      <div>
+      <div className="info-block">
         <StatInfoList />
         <AbilityInfoList />
       </div>
+      <div className="info-block">
       <HyperStatInfoList />
+      </div>
+      <div className="info-block">
       <SymbolInfoList />
+      </div>
+      <div className="info-block">
       <LinkSkillInfoList />
+      </div>
     </div>
   );
 };

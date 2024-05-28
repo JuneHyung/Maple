@@ -1,4 +1,6 @@
 .app-header {
+  display:flex;
+  flex-direction: column;
   .logo-wrap {
     display: flex;
     justify-content: center;

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCharacterHyperStat } from "../../api/stat";
+import { getCharacterHyperStat } from "@/api/stat";
 import HyperStatInfoListItem from "./HyperStatInfoListItem";
 import { useUserStore } from "@/store/user";
 import { HyperStat } from "@/models/stat";

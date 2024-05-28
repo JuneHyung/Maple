@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCharacterCashEquipment } from "../../api/equipment";
+import { getCharacterCashEquipment } from "@/api/equipment";
 import CashEquipmentListItem from "./CashEquipmentListItem";
-import OpenButton from "../common/OpenButton";
+import OpenButton from "@/components/common/OpenButton";
 import { useUserStore } from "@/store/user";
 import { CashEquipmentInfo } from "@/models/equipment";
 

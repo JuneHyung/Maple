@@ -1,11 +1,12 @@
-@import "@/assets/scss/components/stat/basicInfo.scss";
-@import "@/assets/scss/components/stat/abilityInfo.scss";
-@import "@/assets/scss/components/stat/statInfo.scss";
-@import "@/assets/scss/components/stat/symbol.scss";
-@import "@/assets/scss/components/stat/hexaInfo.scss";
-@import "@/assets/scss/components/skill/link.scss";
+@import '@/assets/scss/components/stat/basicInfo.scss';
+@import '@/assets/scss/components/stat/abilityInfo.scss';
+@import '@/assets/scss/components/stat/statInfo.scss';
+@import '@/assets/scss/components/stat/symbol.scss';
+@import '@/assets/scss/components/stat/hexaInfo.scss';
+@import '@/assets/scss/components/skill/link.scss';
 
 .stat-info-page {
   display: flex;
   padding: 8px 0;
 }
+

@@ -6,7 +6,7 @@ import TabContent from './common/TabContent';
 
 const Content = () => {
   return (
-    <div className="content">
+    <main className="content">
       <BrowserRouter>
         <SearchHeader />
         <Suspense fallback={<div>Loading...</div>}>
@@ -16,7 +16,7 @@ const Content = () => {
           </Routes>
         </Suspense>
       </BrowserRouter>
-    </div>
+    </main>
   );
 };
 

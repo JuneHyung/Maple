@@ -1,9 +1,44 @@
+
 .union-artifact-crystal-list {
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
   flex: 1;
+  justify-content: space-between;
+  .union-artifact-crystal-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width:33%;
+    aspect-ratio: 1/1.53;
+    background-image: $artifact-bg-color;
+    border-radius: 10px;
+    border: 3px solid $artifact-border-color;
+    margin: 4px 0px;
+    justify-content: space-between;
+    text-align: center;
+    padding: 8px 0 0 0;
+    .crystal-level {
+      color: $artifact-color;
+    }
+    .crystal-option-list {
+      text-align: left;
+      .crystal-option-list-item {
+        padding: 8px;
+        background-color: rgba(0, 0, 0, 0.2);
+        font-size: 0.85rem;
+      }
+    }
+  }
+  .max-level-item {
+    background-image: $artifact-maxlv-bg-color !important;
+    border: 3px solid $artifact-maxlv-border-color !important;
+    .crystal-level {
+      color: $artifact-maxlv-color !important;
+    }
+  }
 }
+
 .union-artifact-effect-list {
   display: flex;
   flex: 1;
@@ -33,39 +68,4 @@
     }
   }
 }
-.union-artifact-crystal-list {
-  justify-content: space-between;
-  .union-artifact-crystal-list-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 190px;
-    aspect-ratio: 1/1.53;
-    background-image: $artifact-bg-color;
-    border-radius: 10px;
-    border: 3px solid $artifact-border-color;
-    margin: 10px 0px;
-    justify-content: space-between;
-    text-align: center;
-    padding: 8px 0 0 0;
-    .crystal-level {
-      color: $artifact-color;
-    }
-    .crystal-option-list {
-      text-align: left;
-      .crystal-option-list-item {
-        padding: 8px;
-        background-color: rgba(0, 0, 0, 0.2);
-        font-size: 0.85rem;
-      }
-    }
-  }
-  .max-level-item {
-    background-image: $artifact-maxlv-bg-color !important;
-    border: 3px solid $artifact-maxlv-border-color !important;
-    .crystal-level {
-      color: $artifact-maxlv-color !important;
-    }
-  }
-}
+

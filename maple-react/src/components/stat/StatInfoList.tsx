@@ -1,10 +1,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import { getCharacterStat } from '@/api/stat';
-import StatInfoListItem from './StatInfoListItem';
-
-import OpenButton from '../common/OpenButton';
 import { useUserStore } from '@/store/user';
 import { FinalStat } from '@/models/stat';
+import StatInfoListItem from './StatInfoListItem';
+import OpenButton from '@/components/common/OpenButton';
 
 const StatInfoList = () => {
   const { ocid } = useUserStore();

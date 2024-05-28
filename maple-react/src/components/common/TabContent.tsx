@@ -1,9 +1,10 @@
 import { Routes, Route, Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { lazy, useCallback, useEffect } from 'react';
 
-import BasicInfoList from '../stat/BasicInfoList';
+
 import { useUserStore } from '@/store/user';
 import { getOcidByCharacterName } from '@/api/user';
+import BasicInfoList from '@/components/stat/BasicInfoList';
 const StatInfoPage = lazy(()=>import("@/pages/StatInfoPage"));
 const SkillInfoPage = lazy(()=>import("@/pages/SkillInfoPage"));
 const EquipmentInfoPage = lazy(()=>import("@/pages/EquipmentInfoPage"));

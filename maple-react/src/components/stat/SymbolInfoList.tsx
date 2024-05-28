@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCharacterSymbol } from "../../api/stat";
+import { getCharacterSymbol } from "@/api/stat";
 import SymbolInfoListItem from "./SymbolInfoListItem";
-import OpenButton from "../common/OpenButton";
 import { useUserStore } from "@/store/user";
 import { SymbolInfo } from "@/models/stat";
+import OpenButton from "../common/OpenButton";
 
 const SymbolInfoList = () => {
   const {ocid} = useUserStore();

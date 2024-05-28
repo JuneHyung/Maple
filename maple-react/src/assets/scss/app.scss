@@ -9,11 +9,18 @@
 @import "./pages/union.scss";
 .app{
   background: $background-color;
-  display:flex; 
-  flex-direction: column;
   min-height: 100dvh;
   padding:1rem;
   color: #fff;
+
+  .content{
+    display:flex;
+    flex:1;
+    margin:0 auto;
+    flex-direction: column;
+    justify-content: center;
+    max-width:1440px;
+  }
 
   .isOpen {
     height: auto !important;
@@ -34,6 +41,20 @@
     &:hover {
       color: $pinkbean-high-color;
       background-color: rgba(218, 127, 153, 1);
+    }
+  }
+
+  .info-block {
+    display: flex;
+    flex: 1;
+    margin: 0 8px 20px 8px;
+    &:first-child {
+      flex-direction: column;
+      margin-left: 0;
+      justify-content: space-between;
+    }
+    &:last-child{
+      margin-right: 0;
     }
   }
 }

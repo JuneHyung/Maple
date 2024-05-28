@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { checkIsActiveUnionBlock } from "../../api/util";
 import { CellPosBlock, PosInfo, UnionBlock, UnionRaiderInfo } from "@/models/union";
+import { checkIsActiveUnionBlock } from "@/api/util";
 
 type UnionTableProps ={info: UnionRaiderInfo};
 const UnionTable =({info}: UnionTableProps) => {

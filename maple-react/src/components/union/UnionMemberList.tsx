@@ -1,5 +1,6 @@
-import { UnionBlock } from "../../api/union";
-import { divideCharacterType } from "../../api/util";
+import { UnionBlock } from "@/models/union";
+import { divideCharacterType } from "@/api/util";
+
 
 type UnionMemberListProps = {blocks: UnionBlock[]};
 const UnionMemberList = ({blocks}: UnionMemberListProps) => {

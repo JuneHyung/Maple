@@ -1,4 +1,5 @@
-import { UnionRaiderInfo } from "../../api/union";
+
+import { UnionRaiderInfo } from "@/models/union";
 import UnionMemberList from "./UnionMemberList";
 import UnionNoData from "./UnionNoData";
 import UnionRaiderList from "./UnionRaiderList";

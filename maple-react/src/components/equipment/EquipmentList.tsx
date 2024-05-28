@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import { getCharacterEquipment } from "../../api/equipment";
-import { divideGrade } from "../../api/util";
+import { getCharacterEquipment } from "@/api/equipment";
+import { divideGrade } from "@/api/util";
 import EquipmentListItem from "./EquipmentListItem";
-import OpenButton from "../common/OpenButton";
+import OpenButton from "@/components/common/OpenButton";
 import { useUserStore } from "@/store/user";
 import { EquipmentInfo } from "@/models/equipment";
 

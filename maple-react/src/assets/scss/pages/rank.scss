@@ -1,4 +1,6 @@
 .rank-info-page {
+  display:flex;
+  flex-direction: column;
   .rank-class-list {
     .rank-class-row {
       display: flex;

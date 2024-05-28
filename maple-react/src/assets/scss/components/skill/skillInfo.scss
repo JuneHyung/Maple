@@ -1,17 +1,12 @@
 .skill-info {
-  margin: 0 8px;
-  &:first-child {
-    margin-left: 0;
-  }
+  width:100%;
+  
   .skill-info-list {
-    width: 300px;
     height: 450px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    &:first-child {
-      margin-left: 0;
-    }
+
     .skill-info-item {
       display: flex;
       position: relative;
