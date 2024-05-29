@@ -1,7 +1,5 @@
-# <img src="./images/pinkbean.gif" style="width:50px; height:44px;"/> MapleJJANG
+# <img src="./images/pinkbean.gif" style="width:50px; height:44px;"/> MapleLookup
 Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비스** 입니다.
-
-완전 메짱이셔
 
 <br/>
 
@@ -15,17 +13,30 @@ Nexon Open API를 이용한 메이플스토리 **캐릭터 정보 조회 서비�
 
 ## 🤼‍♂️ 개요
 
-- 프로젝트 이름 : MapleJJANG
-- 기술 Stack : React, Typescript, Node.js
+- 프로젝트 이름 : MapleLookup
+- 기술 Stack : React, Typescript, Node.js(v20)
 
 <br/>
 
-## 🎯 목표
+## 🎯 Change Log
 
-* 생각한 기능 구현
-  * 직업랭킹, 스탯, 스킬(하이퍼스탯, 5차, 6차 관련, 유니온) 조회
-  * 내용이 많을 시 (접기, 펼치기로 높이조절 )
-  * 유니온 테이블 그려보기
+### 👉 2차 수정
+
+* 기존 CRA로 구축한 개발환경을 vite로 변경. ([create-react-app-junehyung](https://www.npmjs.com/package/create-react-app-junehyung)이용)
+* Props로 관리하던 OCID를 zustand를 활용해 관리하도록 변경.
+* Tab이동 시 url경로가 바뀌도록 변경
+
+### 👉 1차 수정
+
+* 아티팩트 정보 추가
+* 성능 최적화
+* Meta Data
+
+### 👉 초기  기능 구현
+
+* 직업랭킹, 스탯, 스킬(하이퍼스탯, 5차, 6차 관련, 유니온) 조회
+* 내용이 많을 시 (접기, 펼치기로 높이조절 )
+* 유니온 테이블 그려보기
 
 <br/>
 
