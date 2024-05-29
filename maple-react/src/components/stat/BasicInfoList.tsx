@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { getCharacterBasic } from "@/api/stat";
-import { divideNumberComma, preloadImage } from "@/api/util";
+import { divideNumberComma} from "@/api/util";
 import { useUserStore } from "@/store/user";
 import { BasicInfo } from "@/models/stat";
 
