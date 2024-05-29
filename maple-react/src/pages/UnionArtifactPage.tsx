@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import { useCallback, useEffect, useState } from "react";
 import UnionArtifactCrystalList from "@/components/artifact/UnionArtifactCrystalList";
 import UnionArtifactEffectList from "@/components/artifact/UnionArtifactEffectList";

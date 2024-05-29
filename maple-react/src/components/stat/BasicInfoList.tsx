@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { getCharacterBasic } from "@/api/stat";
-import { divideNumberComma } from "@/api/util";
+import { divideNumberComma, preloadImage } from "@/api/util";
 import { useUserStore } from "@/store/user";
 import { BasicInfo } from "@/models/stat";
 
@@ -12,7 +12,13 @@ const BasicInfoList = () => {
   const getBasicInfo = useCallback(async (targetOcid: string) => {
     try {
       const info = await getCharacterBasic(targetOcid);
-      setBasicInfo(info);
+      
+      const character_image = new Image();
+      character_image.src=info.character_image;
+      character_image.onload = () => {
+        // 이미지가 로드된 후에 상태를 업데이트
+        setBasicInfo(info);
+      };
     } catch (e) {
       setBasicInfo({} as BasicInfo);
       alert(e);

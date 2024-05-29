@@ -26,7 +26,7 @@ const CharacterTypeList = () => {
           <div className="rank-class-row" key={idx}>
             {row.map((character) => (
               <li
-                className={`rank-class-item ${divideCharacterType(character.type as CharacterType)} ${character.key === selectedClass.key ? 'selected-item' : ''}`}
+                className={`rank-class-item ${divideCharacterType(character.type as CharacterType)}${character.key === selectedClass.key ? ' selected-item' : ''}`}
                 key={character.label}
                 onClick={() => handleSelectedClass(character as ClassInfo)}>
                 {character.label}

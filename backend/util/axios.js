@@ -5,6 +5,8 @@ exports.api = axios.create({
   headers:{
     'Content-Type': 'application/json',
     "x-nxopen-api-key": process.env.NODE_APP_MAPLE_API_KEY,
-    "accept": "application/json"
+    "accept": "application/json",
+    "Content-Encoding": "gzip",
+    "Cache-Control": "no-cache",
   }
 })
