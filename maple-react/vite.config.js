@@ -28,21 +28,8 @@ export default defineConfig({
       "@": "/src",
     },
   },
-  esbuild:{
-    minify: true,
-    treeShaking: true,
-    drop: ['console', 'debugger']
-  },
   build: {
-    minify: 'terser', // or 'esbuild'
-    terserOptions: {
-      compress: {
-        drop_console: true, // 콘솔 로그 제거
-      },
-      output: {
-        comments: false, // 주석 제거
-      },
-    },
+    minify: 'esbuild', // 'esbuild' 사용
     rollupOptions: {
       output: {
         manualChunks: (id) => {
@@ -53,4 +40,9 @@ export default defineConfig({
       }
     }
   },
+  esbuild: {
+    minify: true, // esbuild로 minify 수행
+    treeShaking: true,
+    drop: ['console', 'debugger'], // 콘솔 로그와 디버거 제거
+  }
 });
