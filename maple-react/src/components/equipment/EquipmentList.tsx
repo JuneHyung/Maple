@@ -5,12 +5,13 @@ import EquipmentListItem from "./EquipmentListItem";
 import OpenButton from "@/components/common/OpenButton";
 import { useUserStore } from "@/store/user";
 import { EquipmentInfo } from "@/models/equipment";
+import useIsVisible from "@/api/hooks";
 
 const EquipmentInfoList = () => {
   const {ocid} = useUserStore();
   const [equipmentInfo, setEquipmentInfo] = useState<EquipmentInfo>({} as EquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
-
+  const {isVisible, listRef} = useIsVisible(450);
   // ocid로 장비목록 조회.
   const getItemEquipmentInfo = useCallback(async (targetOcid: string) => {
     try {
@@ -31,7 +32,7 @@ const EquipmentInfoList = () => {
 
   return (
     <div className="equipment-info">
-      <ul className={`equipment-info-list ${isOpen && "isOpen"}`}>
+      <ul ref={listRef} className={`equipment-info-list ${isOpen && "isOpen"}`}>
         <h1 className="info-title">장비</h1>
         {equipmentInfo.item_equipment !== undefined
           ? equipmentInfo.item_equipment.map((item) => (
@@ -39,7 +40,7 @@ const EquipmentInfoList = () => {
             ))
           : null}
       </ul>
-      <OpenButton list={equipmentInfo.item_equipment} isOpen={isOpen} handleIsOpen={setIsOpen}/>
+      <OpenButton list={equipmentInfo.item_equipment} isVisible={isVisible} isOpen={isOpen} handleIsOpen={setIsOpen}/>
     </div>
   );
 };

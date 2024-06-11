@@ -1,3 +1,24 @@
+/* Media queries for different screen sizes */
+@media (max-width: 1199px) and (min-width: 801px) {
+  .rank-info-list {
+  .rank-info-item {
+      width: 24.5% !important; // 4 items per row
+  }}
+}
+
+@media (max-width: 800px) and (min-width: 601px) {
+.rank-info-list {
+  .rank-info-item {
+      width: 32.5% !important; // 3 items per row
+  }}
+}
+
+@media (max-width: 600px) {
+  .rank-info-list {
+  .rank-info-item {
+      width: 48.5% !important; // 2 items per row
+  }}
+}
 .rank-info-page {
   display:flex;
   flex-direction: column;
@@ -6,9 +27,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      &:nth-child(2n) {
-        justify-content: flex-end;
-      }
+
       .rank-class-item {
         padding: 8px;
         margin: 4px;
@@ -19,6 +38,8 @@
         justify-content: center;
         font-size: 0.75rem;
         transition: all 0.2s;
+        height:32px;
+        text-align: center;
         cursor: pointer;
         &:hover {
           opacity: 0.5;
@@ -61,7 +82,7 @@
     .rank-info-item {
       display: flex;
       flex-direction: column;
-      width: 19.5%;
+      width:19.5%;
       box-sizing: border-box;
       padding: 0.5rem;
       margin: 4px 0;

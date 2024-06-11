@@ -4,12 +4,13 @@ import SymbolInfoListItem from "./SymbolInfoListItem";
 import { useUserStore } from "@/store/user";
 import { SymbolInfo } from "@/models/stat";
 import OpenButton from "../common/OpenButton";
+import useIsVisible from "@/api/hooks";
 
 const SymbolInfoList = () => {
   const {ocid} = useUserStore();
   const [symbolInfo, setSymbolInfo] = useState<SymbolInfo>({} as SymbolInfo);
   const [isOpen, setIsOpen] = useState(false);
-
+  const {isVisible, listRef} = useIsVisible(450);
   // ocid로 캐릭터의 심볼정보 조회.
   const getSymbolInfo = useCallback(async (ocid: string) => {
     try {
@@ -27,11 +28,11 @@ const SymbolInfoList = () => {
   
   return (
     <div className="symbol-info">
-      <ul className={`symbol-info-list ${isOpen ? "isOpen" : ""}`}>
+      <ul ref={listRef} className={`symbol-info-list ${isOpen ? "isOpen" : ""}`}>
         <h1 className="info-title">심볼</h1>
         {symbolInfo.symbol && symbolInfo.symbol.map((symbol, idx) => <SymbolInfoListItem symbol={symbol} idx={idx} key={`${symbol.symbol_name}${symbol.symbol_force}`}/>)}
       </ul>
-      <OpenButton list={symbolInfo.symbol} isOpen={isOpen} handleIsOpen={setIsOpen} />
+      <OpenButton list={symbolInfo.symbol} isVisible={isVisible} isOpen={isOpen} handleIsOpen={setIsOpen} />
     </div>
   );
 };

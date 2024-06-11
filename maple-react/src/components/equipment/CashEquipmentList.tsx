@@ -4,11 +4,13 @@ import CashEquipmentListItem from "./CashEquipmentListItem";
 import OpenButton from "@/components/common/OpenButton";
 import { useUserStore } from "@/store/user";
 import { CashEquipmentInfo } from "@/models/equipment";
+import useIsVisible from "@/api/hooks";
 
 const CashEquipmentInfoList = () => {
   const {ocid} = useUserStore();
   const [cashEquipmentInfo, setCashEquipmentInfo] = useState<CashEquipmentInfo>({} as CashEquipmentInfo);
   const [isOpen, setIsOpen] = useState(false);
+  const {isVisible, listRef} = useIsVisible(450);
 
   // ocid로 캐시장비 정보 조회.
   const getCashItemEquipmentInfo = useCallback(async (targetOcid: string) => {
@@ -31,7 +33,7 @@ const CashEquipmentInfoList = () => {
 
   return (
     <div className="equipment-info">
-      <ul className={`equipment-info-list cash-equipment-info-list ${isOpen && "isOpen"}`}>
+      <ul ref={listRef} className={`equipment-info-list cash-equipment-info-list ${isOpen && "isOpen"}`}>
         <h1 className="info-title">CASH 장비</h1>
         {cashEquipmentInfo.cash_item_equipment_list !== undefined
           ? cashEquipmentInfo.cash_item_equipment_list.map((item) => (
@@ -39,7 +41,7 @@ const CashEquipmentInfoList = () => {
             ))
           : null}
       </ul>
-      {cashEquipmentInfo.preset_no && <OpenButton list={cashEquipmentInfo.cash_item_equipment_list} isOpen={isOpen} handleIsOpen={setIsOpen}/> }
+      {cashEquipmentInfo.preset_no && <OpenButton list={cashEquipmentInfo.cash_item_equipment_list} isVisible={isVisible} isOpen={isOpen} handleIsOpen={setIsOpen}/> }
     </div>
   );
 };
